@@ -1,0 +1,44 @@
+@import './variables.scss';
+
+@mixin flexCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin resetingLinks {
+  text-decoration: none;
+  color: #4e4e4e;
+}
+
+@mixin button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12rem;
+  height: 3.35rem;
+  border-radius: 3px;
+  border: none;
+  background: $accent-color;
+  color: #fff;
+  font-size: 0.96rem;
+  font-weight: map-get($font-weights, regular);
+  transition: $transition-ease;
+  position: relative;
+  padding-right: 0.85%;
+
+  & svg {
+    transition: $transition-ease;
+    position: relative;
+    left: 7%;
+  }
+
+  &:hover > svg {
+    left: 9.5%;
+  }
+
+  &:hover {
+    background: #3662ff;
+  }
+}

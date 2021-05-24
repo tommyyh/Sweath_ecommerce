@@ -1,0 +1,787 @@
+@import '../../global_css/variables.scss';
+@import '../../global_css/mixins.scss';
+
+.sale_title {
+  width: 100vw;
+  padding: 15vh 3.5vw 0vh 3.5vw;
+
+  & h1 {
+    font-size: 1.45rem;
+    margin-top: 0.8vh;
+  }
+
+  & h2 {
+    font-size: 0.9rem;
+    color: $accent-color;
+    font-weight: map-get($font-weights, regular);
+  }
+}
+
+.sale_title_group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+// Individual sale
+.sale_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 48.95vw);
+  row-gap: 8vh;
+  justify-content: space-between;
+  margin-top: 5vh;
+
+  & a {
+    color: #000;
+    text-decoration: none;
+  }
+}
+
+.list_sale_image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 29.5vh;
+  background: #f4f4f4;
+  position: relative;
+
+  & img {
+    width: 6rem;
+  }
+}
+
+.list_sale_img_percentage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.85rem;
+  height: 1.5rem;
+  background: #e72d34;
+  position: absolute;
+  left: 0;
+  bottom: 8%;
+
+  & h5 {
+    color: #fff;
+    font-weight: map-get($font-weights, regular);
+  }
+}
+
+.list_sale_info {
+  margin: 1.3vh 0vw 0vh 1.77vw;
+
+  & h3 {
+    font-size: 1rem;
+  }
+
+  & h4 {
+    font-size: 1rem;
+    font-weight: map-get($font-weights, regular);
+    margin-top: 0.75vh;
+    color: #ff555a;
+  }
+
+  & span {
+    display: flex;
+    align-items: flex-end;
+
+    & h5 {
+      color: rgb(145, 145, 145);
+      font-weight: map-get($font-weights, regular);
+      margin-left: 0.6rem;
+    }
+  }
+}
+
+// sale filters
+.sale_filters {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: #fff;
+  bottom: 0;
+  left: 0;
+  z-index: 16;
+  padding: 3.75vh 3.5vw 0vh 3.5vw;
+  transition: $transition-ease;
+
+  & button {
+    @include button;
+    margin-bottom: 2vh;
+  }
+}
+
+.hidden {
+  bottom: -100%;
+}
+
+.sale_filters_title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & h2 {
+    font-size: 1.7rem;
+  }
+}
+
+// Sort by filter
+.sale_filter_sortBy {
+  margin-top: 4.4vh;
+
+  & h3 {
+    font-size: 1.15rem;
+    font-weight: map-get($font-weights, medium);
+  }
+
+  & [type='radio'] {
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.75vh;
+  }
+
+  & label {
+    margin-left: 2.25vw;
+  }
+
+  & .newest {
+    margin-top: 1.9vh;
+  }
+
+  & .filter_sortBy_sep {
+    width: 100%;
+    height: 1px;
+    border-radius: 15px;
+    background: #d3d3d3;
+    margin-top: 3.5vh;
+  }
+
+  & span {
+    & img {
+      display: none;
+    }
+  }
+}
+
+// Sort by brand
+.sale_filter_brand {
+  margin-top: 4.7vh;
+
+  & h3 {
+    font-size: 1.15rem;
+    font-weight: map-get($font-weights, medium);
+  }
+
+  & [type='checkbox'] {
+    width: 0.88rem;
+    height: 0.88rem;
+    margin-top: 0.75vh;
+  }
+
+  & label {
+    margin-left: 2.25vw;
+  }
+
+  & .apple {
+    margin-top: 1.9vh;
+  }
+
+  & .filter_brand_sep {
+    width: 100%;
+    height: 1px;
+    border-radius: 15px;
+    background: #d3d3d3;
+    margin-top: 3.5vh;
+  }
+
+  & span {
+    & img {
+      display: none;
+    }
+  }
+}
+
+// Sort by salw
+.sale_filter_onSale {
+  margin-top: 4.7vh;
+
+  & h3 {
+    font-size: 1.15rem;
+    font-weight: map-get($font-weights, medium);
+  }
+
+  & [type='checkbox'] {
+    width: 0.88rem;
+    height: 0.88rem;
+    margin-top: 0.75vh;
+  }
+
+  & label {
+    margin-left: 2.25vw;
+  }
+
+  & .sale {
+    margin-top: 1.9vh;
+  }
+
+  & span {
+    & img {
+      display: none;
+    }
+  }
+}
+
+@media all and (min-width: 1025px) {
+  .sale_title {
+    width: 100%;
+    padding: 15vh 3.5% 0vh 3.5%;
+
+    & h1 {
+      font-size: 2.25rem;
+      margin-top: 0.8vh;
+    }
+
+    & h2 {
+      font-size: 1.2rem;
+      color: $accent-color;
+      font-weight: map-get($font-weights, regular);
+    }
+  }
+
+  .sale_title_group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    & svg {
+      display: none;
+    }
+  }
+
+  // sale wrapper
+  .products_sale {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // Individual sale
+  .sale_list {
+    display: grid;
+    width: 85%;
+    grid-template-columns: repeat(auto-fill, 33.3%);
+    row-gap: 4.88rem;
+    justify-content: space-between;
+    margin-top: 3rem;
+
+    & a {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+
+  .list_sale_image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 85%;
+    height: 16rem;
+    background: #f4f4f4;
+
+    & img {
+      width: 8.25rem;
+      transition: $transition-ease;
+    }
+  }
+
+  .list_sale_img_percentage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 1.87rem;
+    background: #e72d34;
+    position: absolute;
+    left: 0;
+    bottom: 8%;
+
+    & h5 {
+      font-size: 1rem;
+      color: #fff;
+      font-weight: map-get($font-weights, regular);
+    }
+  }
+
+  .list_sale_image_open {
+    & img {
+      width: 9.2rem;
+    }
+  }
+
+  .list_sale_info {
+    margin: 1.3vh 0vw 0vh 0vw;
+
+    & h3 {
+      font-size: 1.55rem;
+      margin-top: 1.2rem;
+    }
+
+    & h4 {
+      font-size: 1.2rem;
+      font-weight: map-get($font-weights, regular);
+      margin-top: 0.75rem;
+      color: #ff555a;
+    }
+
+    & span {
+      display: flex;
+      align-items: flex-end;
+
+      & h5 {
+        color: rgb(145, 145, 145);
+        font-weight: map-get($font-weights, regular);
+        margin-left: 0.6rem;
+      }
+    }
+  }
+
+  // sale filters
+  .sale_filters {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30%;
+    height: initial;
+    position: initial;
+    background: #fff;
+    bottom: initial;
+    left: initial;
+    z-index: initial;
+    padding: 0vh 3.5vw 0vh 3.5vw;
+    transition: $transition-ease;
+    margin-top: 3rem;
+
+    & button {
+      display: none;
+    }
+  }
+
+  .hidden {
+    bottom: initial;
+  }
+
+  .sale_filters_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & h2 {
+      display: none;
+    }
+
+    & svg {
+      display: none;
+    }
+  }
+
+  // Sort by filter
+  .sale_filter_sortBy {
+    border-top: 1px #d3d3d3 solid;
+    border-bottom: 1px #d3d3d3 solid;
+    margin-top: initial;
+    height: 3.75rem;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: $transition-ease;
+
+    & h3 {
+      font-size: 1.15rem;
+      font-weight: map-get($font-weights, medium);
+    }
+
+    & [type='radio'] {
+      width: 1rem;
+      height: 1rem;
+      margin-top: 0.75vh;
+    }
+
+    & label {
+      margin-left: 1rem;
+    }
+
+    & .newest {
+      margin-top: 2rem;
+    }
+
+    & .filter_sortBy_sep {
+      display: none;
+    }
+
+    & span {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 1.1rem;
+
+      & img {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        padding: 1.2rem;
+        margin: -1.2rem;
+      }
+    }
+  }
+
+  .sale_filter_sortBy_open {
+    height: 11.7rem;
+  }
+
+  // Sort by brand
+  .sale_filter_brand {
+    border-bottom: 1px #d3d3d3 solid;
+    margin-top: initial;
+    height: 3.75rem;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: $transition-ease;
+
+    & h3 {
+      font-size: 1.15rem;
+      font-weight: map-get($font-weights, medium);
+    }
+
+    & [type='checkbox'] {
+      width: 0.88rem;
+      height: 0.88rem;
+      margin-top: 0.75vh;
+    }
+
+    & label {
+      margin-left: 1rem;
+    }
+
+    & .apple {
+      margin-top: 2rem;
+    }
+
+    & .filter_brand_sep {
+      display: none;
+    }
+
+    & span {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 1.1rem;
+
+      & img {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        padding: 1.2rem;
+        margin: -1.2rem;
+      }
+    }
+  }
+
+  .sale_filter_brand_open {
+    height: 11.4rem;
+  }
+
+  // Sort by sale
+  .sale_filter_onSale {
+    border-bottom: 1px #d3d3d3 solid;
+    margin-top: initial;
+    height: 3.75rem;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    transition: $transition-ease;
+
+    & h3 {
+      font-size: 1.15rem;
+      font-weight: map-get($font-weights, medium);
+    }
+
+    & [type='radio'] {
+      width: 0.88rem;
+      height: 0.88rem;
+      margin-top: 0.3rem;
+    }
+
+    & label {
+      margin-left: 1rem;
+    }
+
+    & span {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 1.1rem;
+      margin-bottom: 1.6rem;
+
+      & img {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        padding: 1.2rem;
+        margin: -1.2rem;
+      }
+    }
+  }
+
+  .sale_filter_onSale_open {
+    height: 7.15rem;
+  }
+}
+
+// Tablet view
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .sale_title {
+    width: 100vw;
+    padding: 15vh 3.5% 0vh 3.5%;
+
+    & h1 {
+      font-size: 2.23rem;
+      margin-top: 0.8vh;
+    }
+
+    & h2 {
+      font-size: 1.3rem;
+      color: $accent-color;
+      font-weight: map-get($font-weights, regular);
+    }
+  }
+
+  .sale_title_group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  // Individual sale
+  .sale_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 48.8%);
+    row-gap: 8vh;
+    justify-content: space-between;
+    margin-top: 5vh;
+
+    & a {
+      color: #000;
+      text-decoration: none;
+    }
+  }
+
+  .list_sale_image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 32vh;
+    background: #f4f4f4;
+
+    & img {
+      width: 50%;
+      height: 52%;
+    }
+  }
+
+  .list_sale_img_percentage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.65rem;
+    height: 2.6rem;
+    background: #e72d34;
+    position: absolute;
+    left: 0;
+    bottom: 8%;
+
+    & h5 {
+      font-size: 1.13rem;
+      color: #fff;
+      font-weight: map-get($font-weights, regular);
+    }
+  }
+
+  .list_sale_info {
+    margin: 1.7rem 0vw 0vh 1.77vw;
+
+    & h3 {
+      font-size: 1.85rem;
+    }
+
+    & h4 {
+      font-size: 1.7rem;
+      font-weight: map-get($font-weights, regular);
+      margin-top: 0.65rem;
+      color: #ff555a;
+    }
+
+    & span {
+      display: flex;
+      align-items: flex-end;
+
+      & h5 {
+        font-size: 1.2rem;
+        color: rgb(145, 145, 145);
+        font-weight: map-get($font-weights, regular);
+        margin-left: 0.6rem;
+      }
+    }
+  }
+
+  // sale filters
+  .sale_filters {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: #fff;
+    bottom: 0;
+    left: 0;
+    z-index: 16;
+    padding: 3.75vh 3.5vw 0vh 3.5vw;
+    transition: $transition-ease;
+
+    & button {
+      @include button;
+      margin-bottom: 2vh;
+    }
+  }
+
+  .hidden {
+    bottom: -100%;
+  }
+
+  .sale_filters_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & h2 {
+      font-size: 3rem;
+    }
+  }
+
+  // Sort by filter
+  .sale_filter_sortBy {
+    margin-top: 4.4vh;
+
+    & h3 {
+      font-size: 1.8rem;
+      font-weight: map-get($font-weights, medium);
+    }
+
+    & [type='radio'] {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-top: 0.75vh;
+    }
+
+    & label {
+      font-size: 1.4rem;
+      margin-left: 2.25vw;
+    }
+
+    & .newest {
+      margin-top: 1.9vh;
+    }
+
+    & .filter_sortBy_sep {
+      width: 100%;
+      height: 1px;
+      border-radius: 15px;
+      background: #d3d3d3;
+      margin-top: 3.5vh;
+    }
+
+    & span {
+      & img {
+        display: none;
+      }
+    }
+  }
+
+  // Sort by brand
+  .sale_filter_brand {
+    margin-top: 4.7vh;
+
+    & h3 {
+      font-size: 1.8rem;
+      font-weight: map-get($font-weights, medium);
+    }
+
+    & [type='checkbox'] {
+      width: 1.35rem;
+      height: 1.35rem;
+      margin-top: 0.75vh;
+    }
+
+    & label {
+      font-size: 1.4rem;
+      margin-left: 2.25vw;
+    }
+
+    & .apple {
+      margin-top: 1.9vh;
+    }
+
+    & .filter_brand_sep {
+      width: 100%;
+      height: 1px;
+      border-radius: 15px;
+      background: #d3d3d3;
+      margin-top: 3.5vh;
+    }
+
+    & span {
+      & img {
+        display: none;
+      }
+    }
+  }
+
+  // Sort by sale
+  .sale_filter_onSale {
+    margin-top: 4.7vh;
+
+    & h3 {
+      font-size: 1.8rem;
+      font-weight: map-get($font-weights, medium);
+    }
+
+    & [type='checkbox'] {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin-top: 0.75vh;
+    }
+
+    & label {
+      font-size: 1.4rem;
+      margin-left: 2.25vw;
+    }
+
+    & .sale {
+      margin-top: 1.9vh;
+    }
+
+    & span {
+      & img {
+        display: none;
+      }
+    }
+  }
+}

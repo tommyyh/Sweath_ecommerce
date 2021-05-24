@@ -1,0 +1,290 @@
+@import '../../global_css/mixins.scss';
+@import '../../global_css/variables.scss';
+
+// Payment
+.payment_card {
+  padding: 0vh 3.5vw 0vh 3.5vw;
+  margin-top: 4.5rem;
+
+  & h1 {
+    font-size: 1.47rem;
+  }
+
+  & p {
+    font-size: 0.92rem;
+    color: $text-color;
+    margin-top: 0.5rem;
+  }
+
+  & h2 {
+    font-size: 1.17rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  & a {
+    text-decoration: none;
+  }
+}
+
+.payment_card_title {
+  padding-bottom: 1.35rem;
+  border-bottom: 1px #d3d3d3 solid;
+}
+
+.payment_submit {
+  @include button;
+  width: 12rem;
+  height: 3.14rem;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+// Payment form
+#card_number,
+#card_expiry,
+#card_cvc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  height: 7.2vh;
+  max-height: 55px;
+  border: 1.3px #b6b6b6 solid;
+  border-radius: 3px;
+  margin-top: 0.5rem;
+  padding: 0vh 4vw 0vh 4vw;
+  font-size: 0.9rem;
+  font-weight: map-get($font-weights, regular);
+  color: #808080;
+
+  &:first-child {
+    margin-top: 0.5rem;
+  }
+
+  &::placeholder {
+    color: #808080;
+  }
+}
+
+.payment_failed {
+  margin-top: 0.5rem;
+  font-size: 0.88rem;
+  color: #e72d34;
+  font-weight: map-get($font-weights, regular);
+}
+
+// Desktop view
+@media all and (min-width: 1025px) {
+  .payment {
+    display: grid;
+    grid-template-columns: 57% 43%;
+    width: 100%;
+    padding: 0vh 3.5% 0vh 3.5%;
+    margin-top: 6rem;
+  }
+
+  // Payment
+  .payment_card {
+    padding: initial;
+    margin-top: 0rem;
+
+    & h2 {
+      font-size: 1.12rem;
+      margin-bottom: 1.75rem;
+      margin-top: 1.3rem;
+    }
+
+    & p {
+      font-size: 1rem;
+      font-weight: map-get($font-weights, regular);
+      color: #757575;
+      margin-top: 0.6rem;
+    }
+
+    & h1 {
+      font-size: 1.75rem;
+    }
+
+    & a {
+      text-decoration: none;
+    }
+  }
+
+  .payment_card_title {
+    width: 90%;
+    padding-bottom: 3rem;
+    border-bottom: 1px #d3d3d3 solid;
+  }
+
+  // Payment form
+  .payment_card_form {
+    width: 90%;
+    padding-bottom: 2rem;
+    border-bottom: 1px #d3d3d3 solid;
+
+    & span {
+      width: 57%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.65rem;
+    }
+  }
+
+  & .payment_submit {
+    @include button;
+    width: 10.5rem;
+    height: 3rem;
+    margin-top: 2.3rem;
+    font-size: 0.84rem;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.9;
+    }
+  }
+
+  #card_expiry,
+  #card_cvc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 48.7%;
+    height: 7.2vh;
+    max-height: 55px;
+    border: 1.3px #b6b6b6 solid;
+    border-radius: 3px;
+    margin-top: 0rem;
+    padding: 0vh 1.3rem 0vh 1.3rem;
+    font-size: 0.9rem;
+    font-weight: map-get($font-weights, regular);
+    color: #808080;
+
+    &::placeholder {
+      color: #808080;
+    }
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &:first-child {
+      margin-top: initial;
+    }
+  }
+
+  #card_number {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 57%;
+    height: 7.2vh;
+    max-height: 55px;
+    border: 1.3px #b6b6b6 solid;
+    border-radius: 3px;
+    margin-top: initial;
+    padding: 0 1.3rem 0vh 1.3rem;
+    font-size: 0.9rem;
+    font-weight: map-get($font-weights, regular);
+    color: #808080;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &:first-child {
+      margin-top: initial;
+    }
+
+    &::placeholder {
+      color: #808080;
+    }
+  }
+
+  .payment_failed {
+    margin-top: 0.7rem;
+    font-size: 0.88rem;
+    color: #e72d34;
+    font-weight: map-get($font-weights, regular);
+  }
+}
+
+// Tablet view
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  // Payment
+  .payment_card {
+    padding: 0vh 3.5% 0vh 3.5%;
+    margin-top: 4.5rem;
+
+    & h1 {
+      font-size: 1.75rem;
+    }
+
+    & p {
+      font-size: 0.98rem;
+      color: $text-color;
+      margin-top: 0.85rem;
+    }
+
+    & h2 {
+      font-size: 1.4rem;
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    & a {
+      text-decoration: none;
+    }
+  }
+
+  .payment_card_title {
+    padding-bottom: 1.35rem;
+    border-bottom: 1px #d3d3d3 solid;
+  }
+
+  .payment_submit {
+    @include button;
+    width: 13rem;
+    height: 3.7rem;
+    margin-top: 1.9rem;
+    font-size: 1.08rem;
+  }
+
+  // Payment form
+  #card_number,
+  #card_expiry,
+  #card_cvc {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 68%;
+    height: 6vh;
+    max-height: 70px;
+    border: 1.3px #b6b6b6 solid;
+    border-radius: 3px;
+    margin-top: 0.5rem;
+    padding: 0vh 23px 0vh 23px;
+    font-size: 0.9rem;
+    font-weight: map-get($font-weights, regular);
+    color: #808080;
+
+    &:first-child {
+      margin-top: 0.5rem;
+    }
+
+    &::placeholder {
+      color: #808080;
+    }
+  }
+
+  .payment_failed {
+    margin-top: 0.5rem;
+    font-size: 0.88rem;
+    color: #e72d34;
+    font-weight: map-get($font-weights, regular);
+  }
+}

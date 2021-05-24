@@ -1,0 +1,162 @@
+@import '../../global_css/mixins.scss';
+@import '../../global_css/variables.scss';
+
+// Orders dropdown
+.account_orders_dropdown {
+  margin-top: 13.75vh;
+}
+
+// Orders
+.order_history {
+  padding: 0vh 3.5vw 0vh 3.5vw;
+  margin-top: 3rem;
+
+  & h1 {
+    font-size: 1.85rem;
+    margin-top: 5rem;
+  }
+}
+
+// Order line
+.order_line {
+  border-top: 1px #d3d3d3 solid;
+  margin-top: 1.7rem;
+
+  & h4 {
+    font-size: 1rem;
+    color: #808080;
+    font-weight: map-get($font-weights, regular);
+    margin-top: 0.32rem;
+
+    &:first-child {
+      margin-top: 0.8rem;
+      color: $secondary-color;
+    }
+  }
+
+  & a {
+    color: $secondary-color;
+  }
+}
+
+.no_orders {
+  color: $text-color;
+  font-weight: map-get($font-weights, regular);
+  margin-top: 1.5rem;
+  font-size: 0.94rem;
+}
+
+@media all and (min-width: 1025px) {
+  .order_history_wrapper {
+    display: grid;
+    grid-template-columns: 37% 63%;
+    width: 100%;
+    margin-top: 7rem;
+  }
+
+  // Orders dropdown
+  .account_orders_dropdown {
+    margin-top: 0;
+  }
+
+  // Orders
+  .order_history {
+    padding: 0vh 3.5% 0vh 2%;
+    margin-top: 0;
+    width: 100%;
+
+    & h1 {
+      font-size: 1.85rem;
+      margin-top: 0.25rem;
+    }
+
+    & .order_history_span {
+      display: grid;
+      justify-content: space-between;
+      width: 100%;
+      grid-template-columns: repeat(auto-fill, 30% 30% 30%);
+    }
+
+    & .order_history_span_missing {
+      width: 100%;
+    }
+  }
+
+  // Order line
+  .order_line {
+    width: 100%;
+    border-top: 1px #d3d3d3 solid;
+    margin-top: 1.7rem;
+
+    & h4 {
+      font-size: 1rem;
+      color: #808080;
+      font-weight: map-get($font-weights, regular);
+      margin-top: 0.32rem;
+
+      &:first-child {
+        margin-top: 0.8rem;
+        color: $secondary-color;
+      }
+    }
+
+    & a {
+      color: $secondary-color;
+    }
+  }
+
+  .no_orders {
+    color: $text-color;
+    font-weight: map-get($font-weights, regular);
+    margin-top: 1.5rem;
+    font-size: 0.94rem;
+  }
+}
+
+// Tablet view
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  // Orders dropdown
+  .account_orders_dropdown {
+    margin-top: 13.75vh;
+  }
+
+  // Orders
+  .order_history {
+    padding: 0vh 3.5% 0vh 3.5%;
+    margin-top: 3rem;
+
+    & h1 {
+      font-size: 2.3rem;
+      margin-top: 5rem;
+    }
+  }
+
+  // Order line
+  .order_line {
+    border-top: 1px #d3d3d3 solid;
+    margin-top: 1.7rem;
+
+    & h4 {
+      font-size: 1.4rem;
+      color: #808080;
+      font-weight: map-get($font-weights, regular);
+      margin-top: 0.4rem;
+
+      &:first-child {
+        margin-top: 0.8rem;
+        color: $secondary-color;
+      }
+    }
+
+    & a {
+      color: $secondary-color;
+    }
+  }
+
+  .no_orders {
+    color: $text-color;
+    font-weight: map-get($font-weights, regular);
+    margin-top: 1.5rem;
+    font-size: 1rem;
+  }
+}

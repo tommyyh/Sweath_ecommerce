@@ -1,0 +1,36 @@
+{
+  "name": "sweath-ecommerce",
+  "version": "1.0.0",
+  "description": "Ecommerce website using React.js, Node.js, Express.js and more.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "14.x"
+  },
+  "author": "Tommy Hoang",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.896.0",
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "helmet": "^4.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "mysql2": "^2.2.5",
+    "nodemailer": "^6.6.0",
+    "sequelize": "^6.6.2",
+    "sequelize-slugify": "^1.5.0",
+    "stripe": "^8.148.0"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.7"
+  }
+}

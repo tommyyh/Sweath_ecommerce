@@ -1,0 +1,307 @@
+@import '../../global_css/mixins.scss';
+@import '../../global_css/variables.scss';
+
+// Order shipping summary
+.order_summary {
+  padding: 0vh 3.5vw 0vh 3.5vw;
+  margin-top: 4rem;
+}
+
+.order_summary_wrapper {
+  border-bottom: 1px #d3d3d3 solid;
+  border-top: 1px #d3d3d3 solid;
+  overflow: hidden;
+  height: 4.5rem;
+  transition: $transition-ease;
+}
+
+.order_summary_open {
+  height: 72.25vh;
+  max-height: 519px;
+}
+
+// Order summary title
+.order_summary_title {
+  display: flex;
+  height: 4.5rem;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+
+  & h2 {
+    font-size: 1.28rem;
+  }
+
+  & img {
+    width: 1.1rem;
+  }
+}
+
+// Order summary total ammount
+.order_summary_totalAmmount {
+  & h4 {
+    margin-top: 0.58rem;
+    font-weight: map-get($font-weights, regular);
+    font-size: 1rem;
+    color: #959595;
+
+    &:last-child {
+      color: $secondary-color;
+      font-size: 1.05rem;
+      margin-bottom: 3.25rem;
+    }
+  }
+}
+
+// Order summary item
+.order_summary_item {
+  display: flex;
+  margin-top: 2rem;
+}
+
+// Order summary item img
+.order_summary_item_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17.65vw;
+  height: 11.5vh;
+  background: #f0f0f0;
+
+  & img {
+    width: 63%;
+  }
+}
+
+// Order summary item info
+.order_summary_item_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 1rem;
+
+  & h3 {
+    font-size: 1.15rem;
+    font-weight: map-get($font-weights, regular);
+  }
+
+  & h4 {
+    font-size: 0.9rem;
+    font-weight: map-get($font-weights, regular);
+    color: #959595;
+
+    &:first-child {
+      margin-bottom: 0.25rem;
+    }
+  }
+}
+
+// Desktop view
+@media all and (min-width: 1050px) {
+  // Order shipping summary
+  .order_summary {
+    padding: 0vh 6% 0vh 6%;
+    margin-top: 0rem;
+    background: #fbfbfb;
+  }
+
+  .order_summary_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    border-bottom: initial;
+    border-top: initial;
+    overflow: hidden;
+    height: initial;
+    transition: $transition-ease;
+  }
+
+  .order_summary_open {
+    height: auto;
+    padding-bottom: 1.75rem;
+    max-height: initial;
+  }
+
+  // Order summary title
+  .order_summary_title {
+    display: flex;
+    height: initial;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.4rem;
+
+    & h2 {
+      font-size: 1.56rem;
+      margin-top: 1.75rem;
+    }
+
+    & img {
+      display: none;
+    }
+  }
+
+  // Order summary total ammount
+  .order_summary_totalAmmount {
+    border-bottom: 1px #e8e8e8 solid;
+
+    & h4 {
+      margin-top: 0.58rem;
+      font-weight: map-get($font-weights, regular);
+      font-size: 1rem;
+      color: #959595;
+
+      &:last-child {
+        color: $secondary-color;
+        font-size: 1.05rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+  }
+
+  // Order summary item
+  .order_summary_item {
+    display: flex;
+    margin-top: 1.75rem;
+
+    & a {
+      width: 15%;
+    }
+  }
+
+  // Order summary item img
+  .order_summary_item_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 11.4vh;
+    background: #f0f0f0;
+
+    & img {
+      width: 63%;
+    }
+  }
+
+  // Order summary item info
+  .order_summary_item_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 1rem;
+
+    & h3 {
+      font-size: 1.12rem;
+      font-weight: map-get($font-weights, regular);
+    }
+
+    & h4 {
+      font-size: 0.85rem;
+      font-weight: map-get($font-weights, regular);
+      color: #959595;
+
+      &:first-child {
+        margin-bottom: 0.25rem;
+      }
+    }
+  }
+}
+
+// Tablet view
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  // Order shipping summary
+  .order_summary {
+    padding: 0vh 3.5% 0vh 3.5%;
+    margin-top: 4rem;
+  }
+
+  .order_summary_wrapper {
+    border-bottom: 1px #d3d3d3 solid;
+    border-top: 1px #d3d3d3 solid;
+    overflow: hidden;
+    height: 4.8rem;
+    transition: $transition-ease;
+  }
+
+  .order_summary_open {
+    height: 56.9vh;
+    max-height: 579px;
+  }
+
+  // Order summary title
+  .order_summary_title {
+    display: flex;
+    height: 4.8rem;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    & h2 {
+      font-size: 1.42rem;
+    }
+
+    & img {
+      width: 1.42rem;
+    }
+  }
+
+  // Order summary total ammount
+  .order_summary_totalAmmount {
+    & h4 {
+      margin-top: 0.62rem;
+      font-weight: map-get($font-weights, regular);
+      font-size: 1.2rem;
+      color: #959595;
+
+      &:last-child {
+        color: $secondary-color;
+        font-size: 1.2rem;
+        margin-bottom: 3.25rem;
+      }
+    }
+  }
+
+  // Order summary item
+  .order_summary_item {
+    display: flex;
+    margin-top: 2rem;
+  }
+
+  // Order summary item img
+  .order_summary_item_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 17.65vw;
+    height: 11vh;
+    background: #f0f0f0;
+
+    & img {
+      width: 63%;
+    }
+  }
+
+  // Order summary item info
+  .order_summary_item_info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 1rem;
+
+    & h3 {
+      font-size: 1.5rem;
+      font-weight: map-get($font-weights, regular);
+    }
+
+    & h4 {
+      font-size: 1.17rem;
+      font-weight: map-get($font-weights, regular);
+      color: #959595;
+
+      &:first-child {
+        margin-bottom: 0.7rem;
+      }
+    }
+  }
+}

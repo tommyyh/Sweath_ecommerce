@@ -1,0 +1,358 @@
+@import '../../global_css/mixins.scss';
+@import '../../global_css/variables.scss';
+
+// Orders dropdown
+.account_order_dropdown {
+  margin-top: 13.75vh;
+}
+
+// Order
+.accountOrder {
+  padding: 0vh 3.5vw 0vh 3.5vw;
+  margin-top: 3rem;
+
+  & h2 {
+    font-size: 1.3rem;
+    color: $accent-color;
+    font-weight: map-get($font-weights, regular);
+  }
+
+  & h1 {
+    font-size: 1.78rem;
+    margin-top: 0.21rem;
+  }
+}
+
+// Order overview
+.accountOrder_overview {
+  margin-top: 1rem;
+
+  & h4 {
+    color: $text-color;
+    font-weight: map-get($font-weights, regular);
+    margin-top: 0.17rem;
+  }
+}
+
+// Order item
+.accountOrder_items {
+  margin-top: 3.25rem;
+
+  & h3 {
+    font-size: 1.35rem;
+  }
+}
+
+.accountOrder_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 3.1rem;
+  border-top: 1px #d3d3d3 solid;
+  margin-top: 1.85rem;
+  padding-top: 1.25rem;
+
+  & a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+
+  & img {
+    height: 2.9rem;
+  }
+
+  & h4 {
+    font-size: 1.1rem;
+    color: $text-color;
+    font-weight: map-get($font-weights, regular);
+    margin-left: 0.5rem;
+    text-decoration: none;
+  }
+
+  &:nth-child(2) {
+    margin-top: 1.1rem;
+  }
+}
+
+// Order info - Shipping and payment method
+.accountOrder_info {
+  margin-top: 5rem;
+}
+
+.order_info {
+  & h3 {
+    font-size: 1.35rem;
+    margin-top: 3.5rem;
+  }
+
+  & h4 {
+    font-size: 1rem;
+    color: $text-color;
+    font-weight: map-get($font-weights, regular);
+    margin-top: 0.25rem;
+
+    &:nth-child(2) {
+      margin-top: 1.2rem;
+    }
+  }
+}
+
+.accountOrder_goBack {
+  display: flex;
+  align-items: center;
+  margin-top: 4.5rem;
+
+  & a {
+    text-decoration: none;
+    color: $accent-color;
+    font-size: 1rem;
+    font-weight: map-get($font-weights, medium);
+    margin-left: 0.8rem;
+  }
+}
+
+@media all and (min-width: 1025px) {
+  .accountOrder_wrapper {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin-top: 6.8rem;
+  }
+
+  // Orders dropdown
+  .account_order_dropdown {
+    margin-top: 0;
+  }
+
+  // Order
+  .accountOrder {
+    padding: initial;
+    margin-top: 0;
+    padding: 0vh 3.5% 0vh 3.5%;
+
+    & h2 {
+      font-size: 1.3rem;
+      color: $accent-color;
+      font-weight: map-get($font-weights, regular);
+    }
+
+    & h1 {
+      font-size: 2.1rem;
+      margin-top: 0.15rem;
+    }
+  }
+
+  // Order overview
+  .accountOrder_overview {
+    margin-top: 1rem;
+
+    & h4 {
+      font-size: 0.9rem;
+      color: $text-color;
+      font-weight: map-get($font-weights, regular);
+      margin-top: 0.17rem;
+    }
+  }
+
+  // Order item
+  .accountOrder_items {
+    margin-top: 3.25rem;
+    width: 100%;
+
+    & h3 {
+      font-size: 1.35rem;
+    }
+  }
+
+  .accountOrder_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 3.1rem;
+    border-top: 1px #d3d3d3 solid;
+    margin-top: 1.85rem;
+    padding-top: 1.25rem;
+
+    & a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    & img {
+      height: 2.4rem;
+    }
+
+    & h4 {
+      font-size: 1.1rem;
+      color: $text-color;
+      font-weight: map-get($font-weights, regular);
+      margin-left: 0.5rem;
+      text-decoration: none;
+    }
+
+    &:nth-child(2) {
+      margin-top: 1.1rem;
+    }
+  }
+
+  // Order info - Shipping and payment method
+  .accountOrder_info {
+    margin-top: 5rem;
+  }
+
+  .order_info {
+    & h3 {
+      font-size: 1.35rem;
+      margin-top: 3.5rem;
+    }
+
+    & h4 {
+      font-size: 0.9rem;
+      color: $text-color;
+      font-weight: map-get($font-weights, regular);
+      margin-top: 0.7rem;
+
+      &:nth-child(2) {
+        margin-top: 1.6rem;
+      }
+    }
+  }
+
+  .accountOrder_goBack {
+    display: flex;
+    align-items: center;
+    margin-top: 6rem;
+
+    & a {
+      text-decoration: none;
+      color: $accent-color;
+      font-size: 1rem;
+      font-weight: map-get($font-weights, medium);
+      margin-left: 0.8rem;
+      transition: $transition-ease;
+    }
+
+    &:hover > a {
+      margin-left: 0.9rem;
+    }
+  }
+}
+
+// Tablet view
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  // Orders dropdown
+  .account_order_dropdown {
+    margin-top: 13.75vh;
+  }
+
+  // Order
+  .accountOrder {
+    padding: 0vh 3.5% 0vh 3.5;
+    margin-top: 3rem;
+
+    & h2 {
+      font-size: 1.4rem;
+      color: $accent-color;
+      font-weight: map-get($font-weights, regular);
+    }
+
+    & h1 {
+      font-size: 2.1rem;
+      margin-top: 0.3rem;
+    }
+  }
+
+  // Order overview
+  .accountOrder_overview {
+    margin-top: 1rem;
+
+    & h4 {
+      font-size: 1.05rem;
+      color: $text-color;
+      font-weight: map-get($font-weights, regular);
+      margin-top: 0.17rem;
+    }
+  }
+
+  // Order item
+  .accountOrder_items {
+    margin-top: 3.25rem;
+
+    & h3 {
+      font-size: 1.4rem;
+    }
+  }
+
+  .accountOrder_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 3.1rem;
+    border-top: 1px #d3d3d3 solid;
+    margin-top: 1.85rem;
+    padding-top: 1.25rem;
+
+    & a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    & img {
+      height: 2.9rem;
+    }
+
+    & h4 {
+      font-size: 1.28rem;
+      color: $text-color;
+      font-weight: map-get($font-weights, regular);
+      margin-left: 0.5rem;
+      text-decoration: none;
+    }
+
+    &:nth-child(2) {
+      margin-top: 1.1rem;
+    }
+  }
+
+  // Order info - Shipping and payment method
+  .accountOrder_info {
+    margin-top: 5rem;
+  }
+
+  .order_info {
+    & h3 {
+      font-size: 1.5rem;
+      margin-top: 3.5rem;
+    }
+
+    & h4 {
+      font-size: 1.2rem;
+      color: $text-color;
+      font-weight: map-get($font-weights, regular);
+      margin-top: 0.5rem;
+
+      &:nth-child(2) {
+        margin-top: 1.2rem;
+      }
+    }
+  }
+
+  .accountOrder_goBack {
+    display: flex;
+    align-items: center;
+    margin-top: 6rem;
+
+    & a {
+      text-decoration: none;
+      color: $accent-color;
+      font-size: 1.3rem;
+      font-weight: map-get($font-weights, medium);
+      margin-left: 0.8rem;
+    }
+  }
+}

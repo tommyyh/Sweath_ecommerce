@@ -1,0 +1,138 @@
+@import '../../global_css/variables.scss';
+@import '../../global_css/mixins.scss';
+
+// Order progress
+.order_progress {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 47%);
+  row-gap: 1.2rem;
+  padding: 13.5vh 3.5vw 0vh 3.5vw;
+}
+
+.order_progress_bar {
+  display: flex;
+  align-items: center;
+
+  & .order_progress_title {
+    font-size: 0.92rem;
+    font-weight: map-get($font-weights, regular);
+    margin-left: 2vw;
+  }
+
+  & .order_progress_title_current {
+    padding-bottom: 0.38rem;
+    border-bottom: 1.3px #c7d3ff solid;
+  }
+}
+
+.order_progress_number {
+  @include flexCenter;
+  width: 1.68rem;
+  height: 1.68rem;
+  border-radius: 50%;
+  background: $accent-color;
+
+  & h4 {
+    color: #fff;
+    font-weight: map-get($font-weights, regular);
+  }
+}
+
+.order_progress_bar_disabled .order_progress_number {
+  background: $secondary-color;
+}
+
+// Desktop view
+@media all and (min-width: 1025px) {
+  // Order progress
+  .order_progress {
+    display: flex;
+    grid-template-columns: none;
+    row-gap: initial;
+    padding: 0vh 3.5% 0vh 3.5%;
+    margin-top: 6.9rem;
+  }
+
+  .order_progress_bar {
+    display: flex;
+    align-items: center;
+    margin-left: 4.25%;
+
+    & .order_progress_title {
+      font-size: 1.18rem;
+      font-weight: map-get($font-weights, regular);
+      margin-left: 1rem;
+    }
+
+    & .order_progress_title_current {
+      padding-bottom: 0.25rem;
+      border-bottom: 1.3px #c7d3ff solid;
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  .order_progress_number {
+    @include flexCenter;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: $accent-color;
+
+    & h4 {
+      color: #fff;
+      font-weight: map-get($font-weights, regular);
+    }
+  }
+
+  .order_progress_bar_disabled .order_progress_number {
+    background: $secondary-color;
+  }
+}
+
+// Tablet view
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  // Order progress
+  .order_progress {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 47%);
+    row-gap: 1.2rem;
+    padding: 14.5vh 3.5% 0vh 3.5%;
+  }
+
+  .order_progress_bar {
+    display: flex;
+    align-items: center;
+
+    & .order_progress_title {
+      font-size: 1.4rem;
+      font-weight: map-get($font-weights, regular);
+      margin-left: 2vw;
+    }
+
+    & .order_progress_title_current {
+      padding-bottom: 0.38rem;
+      border-bottom: 1.3px #c7d3ff solid;
+    }
+  }
+
+  .order_progress_number {
+    @include flexCenter;
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 50%;
+    background: $accent-color;
+
+    & h4 {
+      font-size: 1.2rem;
+      color: #fff;
+      font-weight: map-get($font-weights, regular);
+    }
+  }
+
+  .order_progress_bar_disabled .order_progress_number {
+    background: $secondary-color;
+  }
+}

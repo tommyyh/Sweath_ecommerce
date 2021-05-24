@@ -1,0 +1,42 @@
+@import './variables.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 11vh;
+}
+
+body {
+  font-family: $font-family;
+}
+
+input {
+  outline: none;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+// Adjust font sizes for bigger screens
+@media all and (min-width: 1281px) {
+  html {
+    font-size: 1.26vw;
+  }
+}

@@ -1,0 +1,191 @@
+@import '../../global_css/mixins.scss';
+@import '../../global_css/variables.scss';
+
+// Shipping forms
+.shipping_forms {
+  display: flex;
+  flex-direction: column;
+  padding: 0vh 3.5vw 0vh 3.5vw;
+
+  & h1 {
+    font-size: 1.23rem;
+    margin-top: 3rem;
+  }
+
+  & input {
+    width: 90%;
+    height: 7.2vh;
+    max-height: 55px;
+    border: 1.3px #b6b6b6 solid;
+    border-radius: 3px;
+    margin-top: 0.5rem;
+    padding: 0vh 4vw 0vh 4vw;
+    font-size: 0.9rem;
+    font-weight: map-get($font-weights, regular);
+    color: #808080;
+    transition: $transition-ease;
+
+    &::placeholder {
+      color: #808080;
+    }
+  }
+
+  & button {
+    @include button;
+    height: 3.1rem;
+    margin-top: 1.5rem;
+  }
+
+  & a {
+    text-decoration: none;
+  }
+}
+
+// Error messages
+#shipping_missing_field {
+  border: 1px #ff555a solid;
+  color: #ff555a;
+
+  &::placeholder {
+    color: #ff555a;
+  }
+}
+
+@media all and (min-width: 1025px) {
+  .shipping {
+    display: grid;
+    grid-template-columns: 57% 43%;
+    width: 100%;
+    padding: 0vh 3.5% 0vh 3.5%;
+    margin-top: 5.5rem;
+  }
+
+  // Shipping forms
+  .shipping_forms {
+    display: flex;
+    flex-direction: column;
+    padding: initial;
+
+    & h1 {
+      font-size: 1.75rem;
+      margin-top: 0rem;
+      margin-bottom: 1.4rem;
+    }
+
+    & input {
+      width: 87%;
+      height: 7.2vh;
+      max-height: 55px;
+      border: 1.3px #b6b6b6 solid;
+      border-radius: 3px;
+      margin-top: 0.5rem;
+      padding: 0vh 0.9rem 0vh 0.9rem;
+      font-size: 0.9rem;
+      font-weight: map-get($font-weights, regular);
+      color: #808080;
+      transition: $transition-ease;
+
+      &::placeholder {
+        color: #808080;
+      }
+    }
+
+    & button {
+      @include button;
+      height: 3.1rem;
+      margin-top: 1.5rem;
+    }
+
+    & a {
+      text-decoration: none;
+      width: 1px;
+    }
+  }
+
+  // Input location
+  .shipping_location {
+    display: flex;
+    width: 87%;
+    justify-content: space-between;
+
+    & input {
+      width: 32.2%;
+    }
+  }
+
+  .shipping_name,
+  .shipping_contact {
+    display: flex;
+    width: 87%;
+    justify-content: space-between;
+
+    & input {
+      width: 49%;
+    }
+  }
+
+  // Error messages
+  #shipping_missing_field {
+    border: 1px #ff555a solid;
+    color: #ff555a;
+
+    &::placeholder {
+      color: #ff555a;
+    }
+  }
+}
+
+// Tablet view
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  // Shipping forms
+  .shipping_forms {
+    display: flex;
+    flex-direction: column;
+    padding: 0vh 3.5% 0vh 3.5%;
+
+    & h1 {
+      font-size: 1.9rem;
+      margin: 6rem 0 1.7rem 0;
+    }
+
+    & input {
+      width: 90%;
+      height: 4rem;
+      max-height: initial;
+      border: 1.3px #b6b6b6 solid;
+      border-radius: 3px;
+      margin-top: 0.5rem;
+      padding: 0vh 4vw 0vh 4vw;
+      font-size: 1.21rem;
+      font-weight: map-get($font-weights, regular);
+      color: #808080;
+      transition: $transition-ease;
+
+      &::placeholder {
+        color: #808080;
+      }
+    }
+
+    & button {
+      @include button;
+      height: 4.1rem;
+      width: 15rem;
+      font-size: 1.22rem;
+      margin-top: 2.2rem;
+    }
+
+    & a {
+      text-decoration: none;
+    }
+  }
+
+  // Error messages
+  #shipping_missing_field {
+    border: 1px #ff555a solid;
+    color: #ff555a;
+
+    &::placeholder {
+      color: #ff555a;
+    }
+  }
+}

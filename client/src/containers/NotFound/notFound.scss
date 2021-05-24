@@ -1,0 +1,105 @@
+@import '../../global_css/mixins.scss';
+@import '../../global_css/variables.scss';
+
+// Page not found
+.notFound {
+  padding: 18vh 3.5vw 0vh 3.5vw;
+  margin-bottom: -1rem;
+
+  & h1 {
+    font-size: 1.65rem;
+    margin-right: 0%;
+
+    & span {
+      display: block;
+    }
+  }
+}
+
+.notFound_goBack {
+  display: flex;
+  align-items: center;
+  margin-top: 4rem;
+
+  & a {
+    text-decoration: none;
+    color: $accent-color;
+    font-size: 1rem;
+    font-weight: map-get($font-weights, medium);
+    margin-left: 0.8rem;
+  }
+}
+
+@media all and (min-width: 1025px) {
+  // Page not found
+  .notFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: initial;
+    padding: 0 2% 0 3.5%;
+    margin-bottom: 1rem;
+    margin-top: 8rem;
+
+    & h1 {
+      font-size: 2.8rem;
+      margin-right: initial;
+
+      & span {
+        display: block;
+      }
+    }
+  }
+
+  .notFound_goBack {
+    display: flex;
+    align-items: center;
+    margin-top: 3.2rem;
+
+    &:hover > a {
+      margin-left: 0.92rem;
+    }
+
+    & a {
+      text-decoration: none;
+      color: $accent-color;
+      font-size: 1rem;
+      font-weight: map-get($font-weights, medium);
+      margin-left: 0.8rem;
+      transition: $transition-ease;
+    }
+  }
+}
+
+// Tablet view
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  // Page not found
+  .notFound {
+    padding: 18vh 3.5% 0vh 3.5%;
+    margin-bottom: -1rem;
+
+    & h1 {
+      font-size: 2.6rem;
+      margin-right: 0%;
+
+      & span {
+        display: block;
+      }
+    }
+  }
+
+  .notFound_goBack {
+    display: flex;
+    align-items: center;
+    margin-top: 4rem;
+
+    & a {
+      text-decoration: none;
+      color: $accent-color;
+      font-size: 1.3rem;
+      font-weight: map-get($font-weights, medium);
+      margin-left: 0.8rem;
+    }
+  }
+}

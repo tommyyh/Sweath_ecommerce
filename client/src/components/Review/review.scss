@@ -1,0 +1,182 @@
+@import '../../global_css/mixins.scss';
+@import '../../global_css/variables.scss';
+
+// Individual review
+.show_review {
+  margin-top: 2.8rem;
+
+  &:first-child {
+    margin-top: 2.8rem;
+  }
+
+  & h3 {
+    font-size: 1.18rem;
+  }
+
+  & p {
+    font-size: 0.88rem;
+    line-height: 1.25rem;
+    margin-top: 0.25rem;
+    color: $text-color;
+    font-weight: map-get($font-weights, regular);
+    margin-right: 15%;
+  }
+}
+
+.share_review_author {
+  display: flex;
+  align-items: center;
+  margin-top: 1.3rem;
+
+  & h4 {
+    color: $accent-color2;
+    font-size: 1.35rem;
+    font-weight: map-get($font-weights, regular);
+  }
+
+  & h5 {
+    color: $text-color;
+    font-size: 0.9rem;
+    font-weight: map-get($font-weights, regular);
+    margin-left: 0.6rem;
+  }
+}
+
+.show_review_readMore {
+  display: flex;
+  align-items: center;
+  margin-top: 3.75rem;
+
+  & a {
+    text-decoration: none;
+    color: $accent-color;
+    font-weight: map-get($font-weights, medium);
+    font-size: 0.95rem;
+  }
+
+  & svg {
+    margin-left: 3%;
+  }
+}
+
+// Desktop view
+@media all and (min-width: 1025px) {
+  // Individual review
+  .show_review {
+    margin-top: 3.5rem;
+
+    &:first-child {
+      margin-top: 4rem;
+    }
+
+    & h3 {
+      font-size: 1.3rem;
+    }
+
+    & p {
+      font-size: 1rem;
+      line-height: 2rem;
+      margin-top: 0.4rem;
+      color: $text-color;
+      font-weight: map-get($font-weights, regular);
+      margin-right: 35%;
+    }
+  }
+
+  .share_review_author {
+    display: flex;
+    align-items: center;
+    margin-top: 1.7rem;
+
+    & h4 {
+      color: $accent-color2;
+      font-size: 1.35rem;
+      font-weight: map-get($font-weights, regular);
+    }
+
+    & h5 {
+      color: $text-color;
+      font-size: 0.9rem;
+      font-weight: map-get($font-weights, regular);
+      margin-left: 0.6rem;
+    }
+  }
+
+  .show_review_readMore {
+    display: flex;
+    align-items: center;
+    margin-top: 3.75rem;
+
+    & a {
+      text-decoration: none;
+      color: $accent-color;
+      font-weight: map-get($font-weights, regular);
+      font-size: 0.95rem;
+    }
+
+    & svg {
+      margin-left: 3%;
+    }
+  }
+}
+
+// Tablet view
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  // Individual review
+  .show_review {
+    margin-top: 2.8rem;
+
+    &:first-child {
+      margin-top: 2.8rem;
+    }
+
+    & h3 {
+      font-size: 1.5rem;
+    }
+
+    & p {
+      font-size: 1.05rem;
+      line-height: 2rem;
+      margin-top: 0.6rem;
+      color: $text-color;
+      font-weight: map-get($font-weights, regular);
+      margin-right: 15%;
+    }
+  }
+
+  .share_review_author {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+
+    & h4 {
+      color: $accent-color2;
+      font-size: 1.35rem;
+      font-weight: map-get($font-weights, regular);
+    }
+
+    & h5 {
+      color: $text-color;
+      font-size: 0.9rem;
+      font-weight: map-get($font-weights, regular);
+      margin-left: 0.6rem;
+    }
+  }
+
+  .show_review_readMore {
+    display: flex;
+    align-items: center;
+    margin-top: 3.75rem;
+
+    & a {
+      text-decoration: none;
+      color: $accent-color;
+      font-weight: map-get($font-weights, medium);
+      font-size: 0.95rem;
+    }
+
+    & svg {
+      margin-left: 3%;
+    }
+  }
+}

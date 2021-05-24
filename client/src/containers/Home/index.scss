@@ -1,0 +1,1605 @@
+@import '../../global_css/resets.scss';
+@import '../../global_css/variables.scss';
+@import '../../global_css/mixins.scss';
+
+// Landing page
+.lp_home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 106vh;
+  padding-left: 6.75vw;
+  padding-right: 15vw;
+
+  & h1 {
+    color: $primary-color;
+    font-weight: map-get($font-weights, bold);
+    font-size: 1.82rem;
+  }
+
+  & p {
+    color: #e4e4e4;
+    font-weight: map-get($font-weights, regular);
+    font-size: 0.85rem;
+    line-height: 1.625rem;
+    margin-top: 3vh;
+  }
+
+  & button {
+    @include button;
+    margin-top: 4.5vh;
+  }
+}
+
+.lp_img {
+  position: absolute;
+  width: 100%;
+  height: 103.3vh;
+  top: 0;
+  z-index: -1;
+}
+
+.lp_img_desktop {
+  display: none;
+}
+
+// Why us section
+.whyus {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+  margin-top: 8vh;
+
+  & h2 {
+    font-size: 2.7rem;
+  }
+
+  & .whyus_seperator {
+    height: 0.14rem;
+    width: 10vw;
+    background: $accent-color;
+    border-radius: 2.5px;
+    margin-top: 2.25vh;
+  }
+}
+
+// Why us - price
+.whyus_price {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 9.5vh;
+
+  & h3 {
+    font-size: 1.25rem;
+    font-weight: map-get($font-weights, medium);
+    margin-top: 4.3vh;
+  }
+
+  & p {
+    color: $text-color;
+    font-size: 0.875rem;
+    margin-top: 2.75vh;
+    line-height: 1.5rem;
+  }
+
+  & img {
+    width: 24vw;
+  }
+}
+
+.whyus_price_link {
+  display: flex;
+  align-items: center;
+  margin-top: 6.35vh;
+
+  & a {
+    @include resetingLinks;
+    color: $accent-color;
+    font-size: 0.98rem;
+  }
+
+  & svg {
+    height: 0.75rem;
+    margin-top: 0.2vh;
+    margin-left: 2vw;
+    fill: $accent-color;
+  }
+}
+
+// Why us - customer service
+.whyus_customer_service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 12.2vh;
+
+  & h3 {
+    font-size: 1.25rem;
+    font-weight: map-get($font-weights, medium);
+    margin-top: 4.3vh;
+  }
+
+  & p {
+    color: $text-color;
+    font-size: 0.875rem;
+    margin-top: 2.75vh;
+    line-height: 1.5rem;
+  }
+
+  & img {
+    width: 24vw;
+  }
+}
+
+.whyus_customer_service_link {
+  display: flex;
+  align-items: center;
+  margin-top: 6.35vh;
+
+  & a {
+    @include resetingLinks;
+    color: $accent-color;
+    font-size: 0.98rem;
+  }
+
+  & svg {
+    height: 0.75rem;
+    margin-top: 0.2vh;
+    margin-left: 2vw;
+    fill: $accent-color;
+  }
+}
+
+// Why us - satisfied customers
+.whyus_satisfied_customers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  margin-top: 12.2vh;
+
+  & h3 {
+    font-size: 1.25rem;
+    font-weight: map-get($font-weights, medium);
+    margin-top: 4.3vh;
+  }
+
+  & p {
+    color: $text-color;
+    font-size: 0.875rem;
+    margin-top: 2.75vh;
+    line-height: 1.5rem;
+  }
+
+  & img {
+    width: 24vw;
+  }
+}
+
+.whyus_satisfied_customers_link {
+  display: flex;
+  align-items: center;
+  margin-top: 6.35vh;
+
+  & a {
+    @include resetingLinks;
+    color: $accent-color;
+    font-size: 0.98rem;
+  }
+
+  & svg {
+    height: 0.75rem;
+    margin-top: 0.2vh;
+    margin-left: 2vw;
+    fill: $accent-color;
+  }
+}
+
+// Most popular products
+.trending {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+  margin-top: 23.5vh;
+  padding-left: 3.5vw;
+  padding-right: 3.5vw;
+
+  & h2 {
+    font-size: 2.07rem;
+    font-weight: map-get($font-weights, bold);
+  }
+
+  & h3 {
+    font-size: 1.37rem;
+    color: $accent-color;
+    font-weight: map-get($font-weights, regular);
+  }
+}
+
+.trending_product_section {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fill, 45vw);
+  row-gap: 4vh;
+  margin-top: 5vh;
+
+  & a {
+    color: $secondary-color;
+    text-decoration: none;
+  }
+}
+
+.popular_product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 45.5vw;
+  height: 31.5vh;
+  background: #f4f4f4;
+  position: relative;
+
+  & h4 {
+    font-size: 1.1rem;
+    margin-top: 8%;
+  }
+
+  & h5 {
+    font-size: 1rem;
+    font-weight: map-get($font-weights, regular);
+    margin-top: 3%;
+  }
+
+  & a {
+    @include resetingLinks;
+  }
+}
+
+.popular_product_img {
+  width: 22.3vw;
+}
+
+// Reviews
+.reviews {
+  margin-top: 16.5vh;
+  padding-left: 3.5vw;
+  width: 100%;
+
+  & h3 {
+    font-size: 1.43rem;
+    color: $accent-color;
+    font-weight: map-get($font-weights, regular);
+  }
+
+  & h2 {
+    font-size: 2.15rem;
+  }
+}
+
+.all_reviews {
+  display: flex;
+  width: auto;
+  overflow: hidden;
+  transition: $transition-ease;
+}
+
+.review {
+  margin-left: 10vw;
+  transition: $transition-ease;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+// Review author
+.review_author {
+  display: flex;
+  margin-top: 6.65vh;
+
+  & img {
+    width: 5rem;
+  }
+}
+
+.review_author_info {
+  padding-left: 4vw;
+
+  & h4 {
+    font-size: 1.25rem;
+  }
+
+  & h5 {
+    font-size: 1.035rem;
+    font-weight: map-get($font-weights, regular);
+    color: $text-color;
+    margin-top: 2.75%;
+  }
+}
+
+.review_text {
+  width: 80vw;
+  height: 20.25vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-top: 3.5vh;
+
+  & p {
+    font-size: 0.875rem;
+    color: $text-color;
+    font-weight: map-get($font-weights, regular);
+    line-height: 3.15vh;
+  }
+
+  &::-webkit-scrollbar {
+    -webkit-appearance: none;
+  }
+
+  &::-webkit-scrollbar:vertical {
+    width: 1.25vw;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(131, 131, 131, 0.609);
+    border-radius: 10px;
+  }
+}
+
+.review_end {
+  display: flex;
+  align-items: baseline;
+  width: 100vw - 3.5vw;
+  margin-top: 4vh;
+  padding-right: 3.5vw;
+
+  & h4 {
+    font-size: 3.43rem;
+    color: #8a9bff;
+    font-weight: map-get($font-weights, medium);
+  }
+}
+
+.review_arrow_right {
+  position: absolute;
+  right: 5vw;
+  margin-top: 48.75vh;
+  fill: $accent-color;
+  z-index: 1;
+  transition: $transition-ease;
+}
+
+.review_arrow_left {
+  position: absolute;
+  right: 18vw;
+  margin-top: 48.75vh;
+  fill: $accent-color;
+  z-index: 1;
+  transition: $transition-ease;
+}
+
+// Disabled arrow
+.review_arrow_left_disabled {
+  position: absolute;
+  right: 18vw;
+  margin-top: 48.75vh;
+  fill: #cbcbcb;
+  z-index: 1;
+  transition: $transition-ease;
+  cursor: not-allowed;
+}
+
+.review_arrow_right_disabled {
+  position: absolute;
+  right: 18vw;
+  margin-top: 48.75vh;
+  right: 5vw;
+  fill: #cbcbcb;
+  z-index: 1;
+  transition: $transition-ease;
+  cursor: not-allowed;
+}
+
+// Disable desktop review layout
+.review_author_info_desktop {
+  display: none;
+}
+
+.review_end_desktop {
+  display: none;
+}
+
+.review_main {
+  & svg {
+    display: none;
+  }
+}
+
+// Contact us section
+.contact {
+  margin-top: 19vh;
+  padding-left: 3.5vw;
+
+  & h3 {
+    font-size: 1.43rem;
+    font-weight: map-get($font-weights, regular);
+    color: $accent-color;
+  }
+
+  & h2 {
+    font-size: 2.1rem;
+    font-weight: map-get($font-weights, medium);
+    margin-top: 0.8vh;
+  }
+}
+
+.contact_text {
+  display: flex;
+  width: 100%;
+  height: 28.88vh + 5vh;
+  max-height: 100px;
+  max-height: 190px;
+  margin-top: 3.78vh;
+}
+
+.contact_text_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 28.88vh;
+  max-height: 100px;
+  margin-left: 3.8vw;
+
+  & p {
+    font-size: 0.875rem;
+    color: $text-color;
+    line-height: 1.41rem;
+    margin-right: 16vw;
+  }
+
+  & button {
+    @include button;
+    padding: 1.13rem 1.7rem;
+    margin-top: 5vh;
+  }
+}
+
+.contact_rect {
+  width: 0.6%;
+  height: 100%;
+  background: #8092ff;
+  border-radius: 16px;
+  margin-top: 0.6vh;
+}
+
+@media all and (min-width: 1025px) {
+  // Landing page
+  .lp_home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 106vh;
+    padding-left: 11%;
+    padding-right: 11%;
+
+    & h1 {
+      color: $primary-color;
+      font-weight: map-get($font-weights, bold);
+      font-size: 2.65rem;
+
+      & span {
+        display: block;
+      }
+    }
+
+    & p {
+      color: #e4e4e4;
+      font-weight: map-get($font-weights, regular);
+      font-size: 1.1rem;
+      line-height: 4.4vh;
+      margin: 2.5% 25% 0vh 0vw;
+    }
+
+    & button {
+      @include button;
+      margin-top: 3.9%;
+      width: 12.2rem;
+    }
+  }
+
+  .lp_img {
+    display: none;
+  }
+
+  .lp_img_desktop {
+    display: initial;
+    position: absolute;
+    width: 100%;
+    height: 107vh;
+    top: 0;
+    z-index: -1;
+  }
+
+  // Why us section
+  .whyus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-top: 7.5rem;
+
+    & h2 {
+      font-size: 2.95rem;
+      letter-spacing: 0.135rem;
+    }
+
+    & .whyus_seperator {
+      height: 0.14rem;
+      width: 2.2rem;
+      background: $accent-color;
+      border-radius: 0.3rem;
+      margin-top: 3vh;
+    }
+
+    & span {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 4.1rem;
+    }
+  }
+
+  // Why us - price
+  .whyus_price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 0%;
+
+    & h3 {
+      font-size: 1.55rem;
+      font-weight: map-get($font-weights, medium);
+      margin-top: 11%;
+    }
+
+    & p {
+      color: $text-color;
+      font-size: 0.95rem;
+      margin-top: 2.7vh;
+      line-height: 1.5rem;
+      line-height: 1.9rem;
+      margin-right: 8%;
+      margin-left: 8%;
+    }
+
+    & img {
+      width: 6.8rem;
+    }
+  }
+
+  .whyus_price_link {
+    display: flex;
+    align-items: center;
+    margin-top: 6.35vh;
+
+    & a {
+      @include resetingLinks;
+      color: $accent-color;
+      font-size: 0.98rem;
+    }
+
+    & svg {
+      position: relative;
+      height: 0.75rem;
+      margin-top: 0.2vh;
+      left: 0%;
+      margin-left: 1rem;
+      fill: $accent-color;
+      transition: $transition-ease;
+    }
+
+    &:hover > svg {
+      left: 5%;
+    }
+  }
+
+  // Why us - customer service
+  .whyus_customer_service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 0%;
+
+    & h3 {
+      font-size: 1.55rem;
+      font-weight: map-get($font-weights, medium);
+      margin-top: 11%;
+    }
+
+    & p {
+      color: $text-color;
+      font-size: 0.95rem;
+      margin-top: 2.7vh;
+      line-height: 1.5rem;
+      line-height: 1.9rem;
+      margin-right: 8%;
+      margin-left: 8%;
+    }
+
+    & img {
+      width: 6.8rem;
+    }
+  }
+
+  .whyus_customer_service_link {
+    display: flex;
+    align-items: center;
+    margin-top: 6.35vh;
+
+    & a {
+      @include resetingLinks;
+      color: $accent-color;
+      font-size: 0.98rem;
+    }
+
+    & svg {
+      position: relative;
+      height: 0.75rem;
+      margin-top: 0.2vh;
+      left: 0%;
+      margin-left: 1rem;
+      fill: $accent-color;
+      transition: $transition-ease;
+    }
+
+    &:hover > svg {
+      left: 5%;
+    }
+  }
+
+  // Why us - satisfied customers
+  .whyus_satisfied_customers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 0%;
+
+    & h3 {
+      font-size: 1.55rem;
+      font-weight: map-get($font-weights, medium);
+      margin-top: 11%;
+    }
+
+    & p {
+      color: $text-color;
+      font-size: 0.95rem;
+      margin-top: 2.7vh;
+      line-height: 1.5rem;
+      line-height: 1.9rem;
+      margin-right: 8%;
+      margin-left: 8%;
+    }
+
+    & img {
+      width: 6.8rem;
+    }
+  }
+
+  .whyus_satisfied_customers_link {
+    display: flex;
+    align-items: center;
+    margin-top: 6.35vh;
+
+    & a {
+      @include resetingLinks;
+      color: $accent-color;
+      font-size: 0.98rem;
+    }
+
+    & svg {
+      position: relative;
+      height: 0.75rem;
+      margin-top: 0.2vh;
+      left: 0%;
+      margin-left: 1rem;
+      fill: $accent-color;
+      transition: $transition-ease;
+    }
+
+    &:hover > svg {
+      left: 5%;
+    }
+  }
+
+  // Most popular products
+  .trending {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-top: 10.5rem;
+    padding-left: 4.5%;
+    padding-right: 4.5%;
+
+    & h2 {
+      font-size: 2.5rem;
+      font-weight: map-get($font-weights, bold);
+      margin-top: 0.2rem;
+    }
+
+    & h3 {
+      font-size: 1.52rem;
+      color: $accent-color;
+      font-weight: map-get($font-weights, regular);
+    }
+  }
+
+  .trending_product_section {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fill, 33.3%);
+    row-gap: 1.23rem;
+    margin-top: 5vh;
+
+    & a {
+      color: $secondary-color;
+      text-decoration: none;
+    }
+  }
+
+  .popular_product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95.5%;
+    height: 13.8rem;
+    background: #f4f4f4;
+
+    & h4 {
+      font-size: 1.3rem;
+      margin-top: 6%;
+    }
+
+    & h5 {
+      font-size: 1rem;
+      font-weight: map-get($font-weights, regular);
+      margin-top: 2%;
+    }
+
+    & a {
+      @include resetingLinks;
+    }
+  }
+
+  .popular_product_img {
+    width: 6rem;
+    transition: $transition-ease;
+  }
+
+  .popular_product_img_zoom {
+    width: 6.85rem;
+  }
+
+  // Reviews
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 11rem;
+    padding-left: initial;
+    padding-right: initial;
+    width: 100%;
+
+    & h3 {
+      font-size: 1.73rem;
+      color: $accent-color;
+      font-weight: map-get($font-weights, regular);
+    }
+
+    & h2 {
+      font-size: 2.8rem;
+    }
+  }
+
+  .all_reviews {
+    display: flex;
+    width: auto;
+    overflow: hidden;
+    transition: $transition-ease;
+  }
+
+  .review {
+    display: flex;
+    justify-content: center;
+    margin-left: initial;
+    min-width: 100vw;
+  }
+
+  .reviews_title {
+    margin-left: 16.5vw;
+  }
+
+  // Review author
+  .review_author {
+    display: flex;
+    margin-top: 6.65vh;
+
+    & img {
+      width: 22.5rem;
+      height: 22.5rem;
+      object-fit: cover;
+      user-select: none;
+    }
+  }
+
+  .review_author_info {
+    display: none;
+  }
+
+  .review_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 3.5%;
+    height: 100%;
+
+    & span {
+      display: flex;
+      height: 11vh;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+
+    & svg {
+      display: initial;
+      margin-top: 7vh;
+    }
+  }
+
+  .review_author_info_desktop {
+    & h4 {
+      font-size: 1.4rem;
+      margin-bottom: 0.7vh;
+    }
+
+    & h5 {
+      font-size: 0.9rem;
+      font-weight: map-get($font-weights, regular);
+      color: #717171;
+      margin-bottom: 0.4rem;
+    }
+  }
+
+  .review_end_desktop {
+    & h4 {
+      font-size: 4.4rem;
+      color: $accent-color2;
+    }
+  }
+
+  .review_text {
+    width: 35vw;
+    height: 20.25vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin-top: 3.5vh;
+
+    & p {
+      font-size: 0.95rem;
+      color: $text-color;
+      font-weight: map-get($font-weights, regular);
+      line-height: 3.88vh;
+    }
+
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+    }
+
+    &::-webkit-scrollbar:vertical {
+      width: 0.34vw;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(131, 131, 131, 0.609);
+      border-radius: 10px;
+    }
+  }
+
+  .review_end {
+    display: none;
+  }
+
+  .review_arrow_right {
+    position: absolute;
+    right: 3%;
+    margin-top: 5%;
+    fill: $accent-color;
+    z-index: 1;
+    transition: $transition-ease;
+    cursor: pointer;
+
+    &:hover {
+      fill: #7a97ff;
+    }
+  }
+
+  .review_arrow_left {
+    position: absolute;
+    right: initial;
+    left: 3%;
+    margin-top: 5%;
+    fill: $accent-color;
+    z-index: 1;
+    transition: $transition-ease;
+    cursor: pointer;
+
+    &:hover {
+      fill: #7a97ff;
+    }
+  }
+
+  // Disabled arrow
+  .review_arrow_left_disabled {
+    position: absolute;
+    right: initial;
+    left: 3%;
+    margin-top: 5%;
+    fill: #cbcbcb;
+    z-index: 1;
+    transition: $transition-ease;
+    cursor: not-allowed;
+  }
+
+  .review_arrow_right_disabled {
+    position: absolute;
+    right: 3%;
+    margin-top: 5%;
+    fill: #cbcbcb;
+    z-index: 1;
+    transition: $transition-ease;
+    cursor: not-allowed;
+  }
+
+  .review_author_info_desktop {
+    display: initial;
+  }
+
+  .review_end_desktop {
+    display: initial;
+  }
+
+  // Contact us section
+  .contact {
+    display: flex;
+    justify-content: center;
+    padding-left: initial;
+    margin-top: 12rem;
+
+    & h3 {
+      font-size: 2rem;
+      font-weight: map-get($font-weights, regular);
+      color: $accent-color;
+    }
+
+    & h2 {
+      font-size: 3.3rem;
+      font-weight: map-get($font-weights, medium);
+      margin-top: 0.8rem;
+    }
+
+    & span {
+      width: 30%;
+    }
+  }
+
+  .contact_text {
+    display: flex;
+    width: 42%;
+    height: 28.88vh + 5vh;
+    max-height: 100px;
+    max-height: 190px;
+    margin: 3.78vh 0vw 0vh 4.5rem;
+  }
+
+  .contact_text_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 28.88vh;
+    max-height: 100px;
+    margin-left: 2.2rem;
+
+    & p {
+      font-size: 1.1rem;
+      color: $text-color;
+      line-height: 2.1rem;
+      margin-right: initial;
+    }
+
+    & button {
+      @include button;
+      padding: 1.13rem 1.7rem;
+      margin-top: 8.75%;
+      position: relative;
+      left: -2.25rem;
+    }
+  }
+
+  .contact_rect {
+    width: 0.16rem;
+    height: 7.78rem;
+    background: #8092ff;
+    border-radius: 16px;
+    margin-top: 0.6vh;
+  }
+}
+
+// Tablet view
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  // Landing page
+  .lp_home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 106vh;
+    padding-left: 6.75vw;
+    padding-right: 18vw;
+
+    & h1 {
+      color: $primary-color;
+      font-weight: map-get($font-weights, bold);
+      font-size: 3rem;
+    }
+
+    & p {
+      color: #e4e4e4;
+      font-weight: map-get($font-weights, regular);
+      font-size: 1.35rem;
+      line-height: 2.4rem;
+      margin-top: 3vh;
+    }
+
+    & button {
+      @include button;
+      font-size: 1.53rem;
+      width: 17rem;
+      height: 5rem;
+      margin-top: 4.5vh;
+    }
+  }
+
+  .lp_img {
+    position: absolute;
+    width: 100%;
+    height: 103.3vh;
+    top: 0;
+    z-index: -1;
+  }
+
+  .lp_img_desktop {
+    display: none;
+  }
+
+  // Why us section
+  .whyus {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-top: 7.5rem;
+
+    & h2 {
+      font-size: 2.95rem;
+      letter-spacing: 0.135rem;
+    }
+
+    & .whyus_seperator {
+      height: 0.13rem;
+      width: 2.2rem;
+      background: $accent-color;
+      border-radius: 2.5px;
+      margin-top: 3vh;
+    }
+
+    & span {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 4.1rem;
+    }
+  }
+
+  // Why us - price
+  .whyus_price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 0%;
+
+    & h3 {
+      font-size: 1.3rem;
+      font-weight: map-get($font-weights, medium);
+      margin-top: 2.8rem;
+    }
+
+    & p {
+      color: $text-color;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      line-height: 1.9rem;
+      margin-right: 10%;
+      margin-left: 10%;
+    }
+
+    & img {
+      width: 6rem;
+    }
+  }
+
+  .whyus_price_link {
+    display: flex;
+    align-items: center;
+    margin-top: 6.35vh;
+
+    & a {
+      @include resetingLinks;
+      color: $accent-color;
+      font-size: 0.98rem;
+    }
+
+    & svg {
+      position: relative;
+      height: 0.75rem;
+      margin-top: 0.2vh;
+      left: 0%;
+      margin-left: 1rem;
+      fill: $accent-color;
+      transition: $transition-ease;
+    }
+
+    &:hover > svg {
+      left: 5%;
+    }
+  }
+
+  // Why us - customer service
+  .whyus_customer_service {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 0%;
+
+    & h3 {
+      font-size: 1.3rem;
+      font-weight: map-get($font-weights, medium);
+      margin-top: 2.8rem;
+    }
+
+    & p {
+      color: $text-color;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      line-height: 1.9rem;
+      margin-right: 10%;
+      margin-left: 10%;
+    }
+
+    & img {
+      width: 6rem;
+    }
+  }
+
+  .whyus_customer_service_link {
+    display: flex;
+    align-items: center;
+    margin-top: 6.35vh;
+
+    & a {
+      @include resetingLinks;
+      color: $accent-color;
+      font-size: 0.98rem;
+    }
+
+    & svg {
+      position: relative;
+      height: 0.75rem;
+      margin-top: 0.2vh;
+      left: 0%;
+      margin-left: 1rem;
+      fill: $accent-color;
+      transition: $transition-ease;
+    }
+
+    &:hover > svg {
+      left: 5%;
+    }
+  }
+
+  // Why us - satisfied customers
+  .whyus_satisfied_customers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 0%;
+
+    & h3 {
+      font-size: 1.3rem;
+      font-weight: map-get($font-weights, medium);
+      margin-top: 2.8rem;
+    }
+
+    & p {
+      color: $text-color;
+      font-size: 1rem;
+      line-height: 1.5rem;
+      line-height: 1.9rem;
+      margin-right: 10%;
+      margin-left: 10%;
+      margin-top: 3.3rem;
+    }
+
+    & img {
+      width: 6rem;
+    }
+  }
+
+  .whyus_satisfied_customers_link {
+    display: flex;
+    align-items: center;
+    margin-top: 6.35vh;
+
+    & a {
+      @include resetingLinks;
+      color: $accent-color;
+      font-size: 0.98rem;
+    }
+
+    & svg {
+      position: relative;
+      height: 0.75rem;
+      margin-top: 0.2vh;
+      left: 0%;
+      margin-left: 1rem;
+      fill: $accent-color;
+      transition: $transition-ease;
+    }
+
+    &:hover > svg {
+      left: 5%;
+    }
+  }
+
+  // Most popular products
+  .trending {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin-top: 10.5rem;
+    padding-left: 4.5%;
+    padding-right: 4.5%;
+
+    & h2 {
+      font-size: 2.5rem;
+      font-weight: map-get($font-weights, bold);
+      margin-top: 0.2rem;
+    }
+
+    & h3 {
+      font-size: 1.52rem;
+      color: $accent-color;
+      font-weight: map-get($font-weights, regular);
+    }
+  }
+
+  .trending_product_section {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fill, 33.3%);
+    row-gap: 1.23rem;
+    margin-top: 5vh;
+
+    & a {
+      color: $secondary-color;
+      text-decoration: none;
+    }
+  }
+
+  .popular_product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95.5%;
+    height: 11.8rem;
+    background: #f4f4f4;
+
+    & h4 {
+      font-size: 1.15rem;
+      margin-top: 6%;
+    }
+
+    & h5 {
+      font-size: 0.99rem;
+      font-weight: map-get($font-weights, regular);
+      margin-top: 2%;
+    }
+
+    & a {
+      @include resetingLinks;
+    }
+  }
+
+  .popular_product_img {
+    width: 4.6rem;
+    transition: $transition-ease;
+  }
+
+  .popular_product_img_zoom {
+    width: 6.85rem;
+  }
+
+  // Reviews
+  .reviews {
+    margin-top: 16.5vh;
+    padding-left: 3.5vw;
+    width: 100%;
+
+    & h3 {
+      font-size: 1.8rem;
+      color: $accent-color;
+      font-weight: map-get($font-weights, regular);
+    }
+
+    & h2 {
+      font-size: 2.8rem;
+    }
+  }
+
+  .all_reviews {
+    display: flex;
+    width: auto;
+    overflow: hidden;
+    transition: $transition-ease;
+  }
+
+  .review {
+    margin-left: 10vw;
+    transition: $transition-ease;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  // Review author
+  .review_author {
+    display: flex;
+    margin-top: 6.65vh;
+
+    & img {
+      width: 7rem;
+    }
+  }
+
+  .review_author_info {
+    padding-left: 4vw;
+
+    & h4 {
+      font-size: 1.55rem;
+    }
+
+    & h5 {
+      font-size: 1.3rem;
+      font-weight: map-get($font-weights, regular);
+      color: $text-color;
+      margin-top: 2.75%;
+    }
+  }
+
+  .review_text {
+    width: 80vw;
+    height: 20.25vh;
+    overflow: hidden;
+    overflow-y: scroll;
+    margin-top: 3.5vh;
+
+    & p {
+      font-size: 1.2rem;
+      color: $text-color;
+      font-weight: map-get($font-weights, regular);
+      line-height: 3.15vh;
+    }
+
+    &::-webkit-scrollbar {
+      -webkit-appearance: none;
+    }
+
+    &::-webkit-scrollbar:vertical {
+      width: 0.37rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(161, 161, 161, 0.609);
+      border-radius: 10px;
+    }
+  }
+
+  .review_end {
+    display: flex;
+    align-items: baseline;
+    width: 100vw - 3.5vw;
+    margin-top: 3rem;
+    padding-right: 3.5vw;
+
+    & h4 {
+      font-size: 4.8rem;
+      color: #8a9bff;
+      font-weight: map-get($font-weights, medium);
+    }
+  }
+
+  .review_arrow_right {
+    position: absolute;
+    right: 5vw;
+    margin-top: 48.75vh;
+    fill: $accent-color;
+    z-index: 1;
+    transition: $transition-ease;
+  }
+
+  .review_arrow_left {
+    position: absolute;
+    right: 18vw;
+    margin-top: 48.75vh;
+    fill: $accent-color;
+    z-index: 1;
+    transition: $transition-ease;
+  }
+
+  // Disabled arrow
+  .review_arrow_left_disabled {
+    position: absolute;
+    right: 18vw;
+    margin-top: 48.75vh;
+    fill: #cbcbcb;
+    z-index: 1;
+    transition: $transition-ease;
+    cursor: not-allowed;
+  }
+
+  .review_arrow_right_disabled {
+    position: absolute;
+    right: 18vw;
+    margin-top: 48.75vh;
+    right: 5vw;
+    fill: #cbcbcb;
+    z-index: 1;
+    transition: $transition-ease;
+    cursor: not-allowed;
+  }
+
+  // Disable desktop review layout
+  .review_author_info_desktop {
+    display: none;
+  }
+
+  .review_end_desktop {
+    display: none;
+  }
+
+  .review_main {
+    & svg {
+      display: none;
+    }
+  }
+
+  // Contact us section
+  .contact {
+    display: flex;
+    justify-content: center;
+    padding-left: initial;
+    margin-top: 13rem;
+
+    & h3 {
+      font-size: 1.8rem;
+      font-weight: map-get($font-weights, regular);
+      color: $accent-color;
+    }
+
+    & h2 {
+      font-size: 2.6rem;
+      font-weight: map-get($font-weights, medium);
+      margin-top: 0.8rem;
+    }
+
+    & span {
+      width: 30%;
+    }
+  }
+
+  .contact_text {
+    display: flex;
+    width: 42%;
+    height: 28.88vh + 5vh;
+    max-height: 100px;
+    max-height: 190px;
+    margin: 0% 0vw 0vh 4.5rem;
+  }
+
+  .contact_text_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 28.88vh;
+    max-height: 100px;
+    margin-left: 2.2rem;
+
+    & p {
+      font-size: 1.1rem;
+      color: $text-color;
+      line-height: 2.1rem;
+      margin-right: initial;
+    }
+
+    & button {
+      @include button;
+      padding: 1.13rem 1.7rem;
+      margin-top: 8.75%;
+      position: relative;
+      left: -2.25rem;
+    }
+  }
+
+  .contact_rect {
+    width: 2.68px;
+    height: 11.5rem;
+    background: #8092ff;
+    border-radius: 16px;
+    margin-top: 0.6vh;
+  }
+}

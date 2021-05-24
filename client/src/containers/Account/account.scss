@@ -1,0 +1,107 @@
+@import '../../global_css/mixins.scss';
+@import '../../global_css/variables.scss';
+
+// Account
+.account {
+  padding: 14.5vh 3.5vw 0vh 3.5vw;
+
+  & h2 {
+    color: $accent-color;
+    font-size: 1.22rem;
+    font-weight: map-get($font-weights, regular);
+  }
+
+  & h1 {
+    font-size: 1.75rem;
+    margin-top: 0.2rem;
+  }
+
+  & h4 {
+    font-size: 0.8rem;
+    color: #7d7d7d;
+    font-weight: map-get($font-weights, regular);
+    margin-top: 0.8rem;
+  }
+}
+
+// Desktop view
+@media all and (min-width: 1025px) {
+  .account_wrapper {
+    display: grid;
+    grid-template-columns: 38% 62%;
+    margin-top: 10rem;
+  }
+
+  // Account
+  .account {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: initial;
+    margin-left: 2.3rem;
+
+    & h2 {
+      color: $accent-color;
+      font-size: 1.28rem;
+      font-weight: map-get($font-weights, regular);
+    }
+
+    & h1 {
+      font-size: 2.35rem;
+      margin-top: 0.18rem;
+    }
+
+    & h4 {
+      font-size: 0.86rem;
+      color: #7d7d7d;
+      font-weight: map-get($font-weights, regular);
+      margin-top: 0.6rem;
+    }
+  }
+
+  .admin_link {
+    display: flex;
+    align-items: center;
+
+    & a {
+      color: $accent-color;
+      text-decoration: none;
+    }
+
+    & svg {
+      margin-left: 0.75rem;
+      transition: $transition-ease;
+    }
+
+    &:hover svg {
+      margin-left: 0.97rem;
+    }
+  }
+}
+
+// Tablet view
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  // Account
+  .account {
+    padding: 14.5vh 3.5vw 0vh 3.5vw;
+
+    & h2 {
+      color: $accent-color;
+      font-size: 1.6rem;
+      font-weight: map-get($font-weights, regular);
+    }
+
+    & h1 {
+      font-size: 2.63rem;
+      margin-top: 0.2rem;
+    }
+
+    & h4 {
+      font-size: 1.02rem;
+      color: #7d7d7d;
+      font-weight: map-get($font-weights, regular);
+      margin-top: 0.8em;
+    }
+  }
+}

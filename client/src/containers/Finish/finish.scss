@@ -1,0 +1,125 @@
+@import '../../global_css/mixins.scss';
+@import '../../global_css/variables.scss';
+
+// Finish page
+.thank_you_section {
+  padding: 21vh 3.5vw 0vh 3.5vw;
+
+  & h1 {
+    font-size: 2.35rem;
+  }
+}
+
+.thank_you_text1,
+.thank_you_text2 {
+  color: $text-color;
+  font-size: 0.93rem;
+  line-height: 1.4rem;
+}
+
+.thank_you_text2 {
+  margin-top: 0.8rem;
+}
+
+.thank_you_text1 {
+  margin-top: 1.4rem;
+}
+
+.thank_you_goBack {
+  display: flex;
+  align-items: center;
+  margin-top: 2.25rem;
+
+  & a {
+    text-decoration: none;
+    color: $accent-color;
+    margin-left: 0.8rem;
+  }
+}
+
+// Desktop view
+@media all and (min-width: 1025px) {
+  // Finish page
+  .thank_you_section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    padding: 0vh 12.5% 0vh 12.5%;
+    margin-bottom: -11rem;
+
+    & h1 {
+      font-size: 3.4rem;
+    }
+  }
+
+  .thank_you_text1,
+  .thank_you_text2 {
+    color: $text-color;
+    font-size: 1.12rem;
+    line-height: 1.82rem;
+    margin-right: 34%;
+  }
+
+  .thank_you_text2 {
+    margin-top: 1.3rem;
+    margin-right: 50%;
+  }
+
+  .thank_you_text1 {
+    margin-top: 2.3rem;
+  }
+
+  .thank_you_goBack {
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+
+    & a {
+      text-decoration: none;
+      color: $accent-color;
+      margin-left: 0.8rem;
+    }
+  }
+}
+
+// Tablet view
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  // Finish page
+  .thank_you_section {
+    padding: 21vh 15vw 0vh 3.5vw;
+
+    & h1 {
+      font-size: 2.7rem;
+    }
+  }
+
+  .thank_you_text1,
+  .thank_you_text2 {
+    color: $text-color;
+    font-size: 1.13rem;
+    line-height: 1.8rem;
+  }
+
+  .thank_you_text2 {
+    margin-top: 1.4rem;
+  }
+
+  .thank_you_text1 {
+    margin-top: 2rem;
+  }
+
+  .thank_you_goBack {
+    display: flex;
+    align-items: center;
+    margin-top: 3.8rem;
+
+    & a {
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: $accent-color;
+      margin-left: 0.8rem;
+    }
+  }
+}
