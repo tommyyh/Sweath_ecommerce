@@ -11,6 +11,7 @@ const db = new Sequelize(DB_NAME, DB_USER, DB_PASS, {
   dialect: 'mysql',
   logging: false,
   define: { timestamps: false },
+  port: 0,
 });
 
 module.exports = db;

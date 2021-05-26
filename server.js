@@ -41,15 +41,12 @@ app.use('/shopping-cart', require('./routes/cart')); // Cart route
 app.use('/checkout', require('./routes/checkout')); // Cart route
 app.use('/contact', require('./routes/contact')); // Contact route
 
-// Serve react in production
-if (process.env.NODE_ENV === 'production') {
-  // Set static folder
-  app.use(express.static(path.join(__dirname, 'client', 'build')));
+// Set static folder
+app.use(express.static(path.join(__dirname, 'client', 'build')));
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-  });
-}
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
+});
 
 // Port
 const port = process.env.PORT || 5000;
