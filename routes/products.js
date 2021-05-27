@@ -332,7 +332,7 @@ router.put(
         });
       }
 
-      res.send({ status: 201 });
+      res.send({ status: 201, msg: 'Success' });
     } catch {
       res.send({ status: 400 });
     }
