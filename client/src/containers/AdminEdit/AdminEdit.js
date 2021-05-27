@@ -47,7 +47,7 @@ const AdminEdit = () => {
     setLoading(true);
 
     const fetchProduct = async () => {
-      const res = await axios.get(`/products/product/edit/${product}`);
+      const res = await axios.get(`/products/edit/product/${product}`);
       const {
         title,
         price,

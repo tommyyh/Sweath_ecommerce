@@ -59,7 +59,7 @@ const Payment = () => {
           <div className='payment_card'>
             <div className='payment_card_title'>
               <h1>ORDER PAYMENT</h1>
-              <P text='All card transactions are safe and secure.' />
+              <P text='All card transactions are safe and secure (Test Payment: 4x 4242)' />
             </div>
             <H2 title='Credit / Debit Card' />
             <Elements stripe={promise}>
