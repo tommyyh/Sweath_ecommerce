@@ -23,6 +23,7 @@ const Products = () => {
   const [onSaleOpen, setOnSaleOpen] = useState(false);
   const [products, setProducts] = useState();
   const location = useLocation();
+  const [brands, setBrands] = useState([]);
   const { category } = useParams();
   const userRole = useSelector((state) => state.userRole);
   const history = useHistory();
@@ -47,6 +48,7 @@ const Products = () => {
     const getProducts = async () => {
       const res = await axios.post(`/products/category/${category}`, filter);
 
+      setBrands(res.data.brands);
       setProducts(res.data.category);
       setLoading(false);
     };
@@ -57,7 +59,7 @@ const Products = () => {
   // Fetch products after filtering
   useEffect(() => {
     const fetchFilteredProducts = async () => {
-      const res = await axios.post(window.location.pathname, filter);
+      const res = await axios.post(`/products/category/${category}`, filter);
 
       setProducts(res.data.category);
     };
@@ -84,7 +86,7 @@ const Products = () => {
 
   return (
     <>
-      {!products ? (
+      {!products.title ? (
         <NotFound />
       ) : (
         <>
@@ -186,14 +188,14 @@ const Products = () => {
                     >
                       <SortOption
                         sortOptionTitle='Brand'
-                        sortOption1='Apple'
-                        sortOption2='Dell'
-                        sortOption3='Huawei'
-                        sortOption4='Nokia'
-                        sortOptionName1='apple'
-                        sortOptionName2='dell'
-                        sortOptionName3='huawei'
-                        sortOptionName4='nokia'
+                        sortOption1={brands[0].DISTINCT}
+                        sortOption2={brands[1].DISTINCT}
+                        sortOption3={brands[2].DISTINCT}
+                        sortOption4={brands[3].DISTINCT}
+                        sortOptionName1={brands[0].DISTINCT.toLowerCase()}
+                        sortOptionName2={brands[1].DISTINCT.toLowerCase()}
+                        sortOptionName3={brands[2].DISTINCT.toLowerCase()}
+                        sortOptionName4={brands[3].DISTINCT.toLowerCase()}
                         formGroup='brands'
                         checkbox={true}
                         openByDefault={false}

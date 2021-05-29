@@ -30,6 +30,7 @@ import Loading from '../../components/Loading/Loading';
 const Home = () => {
   const [reviewCounter, setReviewCounter] = useState(1);
   const reviews = useRef(); // Reviews - carousel
+  const trendingRef = useRef();
   const [loading, setLoading] = useState(true);
   const { push } = useHistory();
   const mobileScreen = useMediaQuery({ query: '(max-device-width: 480px)' });
@@ -106,7 +107,12 @@ const Home = () => {
             <span>& TECH ACCESSIBLE FOR LOW PRICES</span>
           </h1>
           <P text='Sweath is an online e-commerce store that sells good quality electronics, technology and other products for low prices.' />
-          <Button buttonTitle='SHOP SALES' onClick={() => push('/sales')} />
+          <Button
+            buttonTitle='TRENDING NOW'
+            onClick={() => {
+              trendingRef.current.scrollIntoView();
+            }}
+          />
         </div>
       </main>
       <Img
@@ -156,7 +162,7 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <div className='trending'>
+        <div className='trending' ref={trendingRef}>
           <H3 title='MOST POPULAR' />
           <H2 title='TRENDING NOW' />
           <div className='trending_product_section'>

@@ -17,7 +17,6 @@ import Contact from './containers/Contact/Contact';
 import Orders from './containers/Orders/Orders';
 import Order from './containers/Order/Order';
 import NotFound from './containers/NotFound/NotFound';
-import AllSales from './containers/AllSales/AllSales';
 import Sale from './containers/Sale/Sale';
 import AdminEdit from './containers/AdminEdit/AdminEdit';
 import LoginPrompt from './containers/LoginPrompt/LoginPrompt';
@@ -140,7 +139,6 @@ function App() {
         />
         <Route path='/contact-us' component={Contact} />
         <Route path='/sale/:title' exact component={Sale} />
-        <Route path='/sales' exact component={AllSales} />
         <Route path='*' component={NotFound} />
       </Switch>
       <Footer />

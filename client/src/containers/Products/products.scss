@@ -413,6 +413,10 @@
     overflow-x: hidden;
     transition: $transition-ease;
 
+    & div:nth-child(2) {
+      margin-top: 2rem;
+    }
+
     & h3 {
       font-size: 1.15rem;
       font-weight: map-get($font-weights, medium);
@@ -426,10 +430,6 @@
 
     & label {
       margin-left: 1rem;
-    }
-
-    & .apple {
-      margin-top: 2rem;
     }
 
     & .filter_brand_sep {

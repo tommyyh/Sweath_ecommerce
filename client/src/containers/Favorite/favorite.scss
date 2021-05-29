@@ -43,7 +43,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 29.5vh;
+  height: 27vh;
   background: #f4f4f4;
   position: relative;
 
@@ -214,6 +214,13 @@
   }
 }
 
+.favorite_noProducts {
+  font-size: 1rem;
+  margin: 0 3.5% 0 3.5%;
+  position: absolute;
+  font-weight: map-get($font-weights, regular);
+}
+
 @media all and (min-width: 1025px) {
   .favorite_title {
     width: 100%;
@@ -246,12 +253,13 @@
   .favorite {
     display: flex;
     justify-content: space-between;
+    padding: 0 3.5% 0vh 3.5%;
   }
 
   // Individual favorite
   .favorite_list {
     display: grid;
-    width: 85%;
+    width: 100%;
     grid-template-columns: repeat(auto-fill, 33.3%);
     row-gap: 5.75rem;
     justify-content: space-between;
@@ -267,13 +275,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 85%;
-    height: 16rem;
+    width: 89%;
+    height: 19.6rem;
     background: #f4f4f4;
     position: relative;
 
     & img {
-      width: 8.25rem;
+      width: 9.5rem;
       transition: $transition-ease;
     }
 
@@ -295,12 +303,12 @@
     margin: 1.3vh 0vw 0vh 0vw;
 
     & h3 {
-      font-size: 1.55rem;
+      font-size: 1.62rem;
       margin-top: 1.2rem;
     }
 
     & h4 {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: map-get($font-weights, regular);
       margin-top: 0.75rem;
     }
@@ -452,7 +460,7 @@
     height: 11.4rem;
   }
 
-  // Sort by salw
+  // Sort by sale
   .favorite_filter_onSale {
     border-bottom: 1px #d3d3d3 solid;
     margin-top: initial;
@@ -500,6 +508,13 @@
   .favorite_filter_onSale_open {
     height: 6.7rem;
   }
+
+  .favorite_noProducts {
+    font-size: 1.1rem;
+    margin: -1rem 0% 0 0%;
+    position: absolute;
+    font-weight: map-get($font-weights, regular);
+  }
 }
 
 // Tablet view
@@ -509,7 +524,7 @@
     padding: 15vh 3.5% 0vh 3.5%;
 
     & h1 {
-      font-size: 2.23rem;
+      font-size: 2.6rem;
       margin-top: 0.8vh;
     }
 
@@ -713,8 +728,8 @@
     }
   }
 
-  .noProducts_available {
-    font-size: 4.4vw;
+  .favorite_noProducts {
+    font-size: 1.4rem;
     margin: 0 3.5% 0 3.5%;
     position: absolute;
     font-weight: map-get($font-weights, regular);

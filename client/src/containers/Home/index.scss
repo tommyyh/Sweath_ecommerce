@@ -28,6 +28,7 @@
 
   & button {
     @include button;
+    width: 13rem;
     margin-top: 4.5vh;
   }
 }
@@ -518,8 +519,9 @@
 
     & button {
       @include button;
+      font-size: 0.934rem;
       margin-top: 3.9%;
-      width: 12.2rem;
+      width: 12.55rem;
     }
   }
 
@@ -1092,8 +1094,8 @@
 
     & button {
       @include button;
-      font-size: 1.53rem;
-      width: 17rem;
+      font-size: 1.4rem;
+      width: 19rem;
       height: 5rem;
       margin-top: 4.5vh;
     }

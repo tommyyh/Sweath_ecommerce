@@ -222,10 +222,11 @@ const Show = () => {
                 <div className='show_title_desktop'>
                   <H2 title={product.CategoryTitle.toUpperCase()} />
                   <h1>
-                    {product.title.toUpperCase()} -{' '}
+                    {product.title.toUpperCase()}
                     {isLogged && (
                       <span className='show_delete' onClick={deleteProduct}>
-                        DELETE
+                        {' '}
+                        - DELETE
                       </span>
                     )}
                   </h1>
@@ -262,14 +263,14 @@ const Show = () => {
                           className='show_asideButtons'
                           onClick={addToFavorite}
                         >
-                          <FaRegHeart size={18} fill='#4870ff' />
+                          <FaRegHeart size={'1.2rem'} fill='#4870ff' />
                         </button>
                       ) : (
                         <button
                           className='show_asideButtons'
                           onClick={removeProduct}
                         >
-                          <FaHeart size={18} fill='#4870ff' />
+                          <FaHeart size={'1.2rem'} fill='#4870ff' />
                         </button>
                       )
                     ) : (
@@ -285,7 +286,7 @@ const Show = () => {
                         }}
                       >
                         <FaRegHeart
-                          size={window.innerWidth < 480 ? 18 : 25}
+                          size={window.innerWidth < 480 ? 18 : '1.2rem'}
                           fill='#4870ff'
                         />
                       </button>
