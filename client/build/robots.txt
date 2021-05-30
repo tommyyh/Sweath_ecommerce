@@ -1,0 +1,13 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Disallow: /admin/
+Disallow: /edit/:product/
+Disallow: /my-account/orders/
+Disallow: /my-account/order/:id/
+Disallow: /checkout/shipping-information/
+Disallow: /checkout/order-payment/
+Disallow: /favorite/
+Disallow: /finish-order/
+Disallow: /products/phones/:title/reviews/
+Disallow: /checkout/order-payment
+Disallow: /checkout/order-payment
