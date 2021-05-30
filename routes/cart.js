@@ -205,6 +205,7 @@ router.post('/add-coupon', async (req, res) => {
   const coupon = await Coupon.findOne({
     where: { title: req.body.couponTitle },
   });
+  console.log(coupon);
 
   try {
     if (!req.session.user) {

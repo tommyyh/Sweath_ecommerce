@@ -11,6 +11,7 @@ const Form = ({
   min,
   max,
   disabled,
+  onKeyPress,
 }) => {
   return (
     <>
