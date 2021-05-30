@@ -33,7 +33,7 @@ const LoginPrompt = () => {
       <HelmetProvider>
         {/* Head */}
         <Helmet>
-          <title>Sweath: Page Not Found</title>
+          <title>Sweath: Login</title>
         </Helmet>
       </HelmetProvider>
       {/* Body */}

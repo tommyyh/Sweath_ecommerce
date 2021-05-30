@@ -1,7 +1,9 @@
-import React from 'react';
-import { FaRegHeart } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { FaRegHeart, FaHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
 
 // Components
 import Img from '../../../components/HtmlTags/Img';
@@ -9,6 +11,7 @@ import H3 from '../../../components/HtmlTags/H3';
 import H4 from '../../../components/HtmlTags/H4';
 import Option from '../../../components/HtmlTags/Option';
 import H5 from '../../../components/HtmlTags/H5';
+import { openLogin } from '../../../actions/menuType';
 
 // Assets
 import Times from '../../../assets/svg/times.svg';
@@ -26,6 +29,55 @@ const CartItem = ({
   productQuantity,
   updateQuantity,
 }) => {
+  const isLogged = useSelector((state) => state.isLogged);
+  const dispatch = useDispatch();
+  const [isFavorite, setIsFavorite] = useState(Boolean);
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const res1 = await axios.get(`/products/show/${productSlug}`);
+      const res2 = await axios.post('/products/favorite-products');
+
+      if (isLogged) {
+        let favoriteProduct;
+
+        if (res2.data.favorite) {
+          favoriteProduct = res2.data.favorite.find(
+            (favoriteProduct) =>
+              favoriteProduct.slug === res1.data.product.slug &&
+              favoriteProduct.UserId === res2.data.userId
+          );
+        } else {
+          favoriteProduct = false;
+        }
+
+        if (!favoriteProduct) {
+          setIsFavorite(false);
+        } else {
+          setIsFavorite(true);
+        }
+      }
+    };
+
+    fetchProduct();
+  }, []);
+
+  const addToFavorite = async () => {
+    const res = await axios.post(`/products/add-to-favorite/${productSlug}`);
+
+    if (res.data.status === 201) {
+      setIsFavorite(true);
+    }
+  };
+
+  const removefromFavorite = async () => {
+    const res = await axios.delete(`/products/favorite/remove/${productSlug}`);
+
+    if (res.data.status === 200) {
+      setIsFavorite(false);
+    }
+  };
+
   return (
     <>
       <div className='cart_item'>
@@ -75,10 +127,19 @@ const CartItem = ({
                 <Img imageSrc={Times} imageAlt='Times icon' />
                 <H5 title='Remove' />
               </div>
-              <div className='cart_item_options_desktop_favorite'>
-                <FaRegHeart size={14} />
-                <H5 title='Favorite' />
-              </div>
+              {isLogged && (
+                <div
+                  className='cart_item_options_desktop_favorite'
+                  onClick={!isFavorite ? addToFavorite : removefromFavorite}
+                >
+                  {!isFavorite ? (
+                    <FaRegHeart size={'0.9rem'} />
+                  ) : (
+                    <FaHeart size={'0.9rem'} />
+                  )}
+                  <H5 title='Favorite' />
+                </div>
+              )}
             </div>
           </div>
         </span>

@@ -75,7 +75,9 @@ const Show = () => {
 
         if (res2.data.favorite) {
           favoriteProduct = res2.data.favorite.find(
-            (favoriteProduct) => favoriteProduct.slug === res1.data.product.slug
+            (favoriteProduct) =>
+              favoriteProduct.slug === res1.data.product.slug &&
+              favoriteProduct.UserId === res2.data.userId
           );
         } else {
           favoriteProduct = false;

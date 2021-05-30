@@ -45,10 +45,8 @@ router.post('/category/:category', async (req, res) => {
   try {
     const { sortBy, brand, onSale } = req.body;
     let category;
+    const storedCategory = await Category.findByPk(req.params.category);
     let orderBy;
-    const fetchedCategory = await Category.findByPk(req.params.category, {
-      include: Product,
-    });
 
     // Sort by - newest
     if (sortBy === 'newest') {
@@ -72,13 +70,6 @@ router.post('/category/:category', async (req, res) => {
 
     // Get all selected brands
     const brands = Object.keys(brand).filter((key) => brand[key] === true);
-
-    // Fetch products
-    if (!fetchedCategory.Products[0]) {
-      res.send({ status: 200, category: fetchedCategory });
-
-      return;
-    }
 
     if (!brands[0]) {
       category = await Category.findByPk(req.params.category, {
@@ -104,10 +95,25 @@ router.post('/category/:category', async (req, res) => {
       });
     }
 
+    // Get all different brand names for filter options
+    const allBrands = await Product.aggregate('brand', 'DISTINCT', {
+      plain: false,
+      where: { CategoryTitle: req.params.category },
+    });
+
+    if (!storedCategory) {
+      res.send({ status: 200, category: { title: undefined, Products: [] } });
+
+      return;
+    }
+
     if (!category) {
-      res.send({ status: 404, category: null });
+      res.send({
+        status: 200,
+        category: { title: storedCategory.title, Products: [] },
+      });
     } else {
-      res.send({ status: 200, category });
+      res.send({ status: 200, category, brands: allBrands });
     }
   } catch {
     res.send({ status: 500 });
@@ -487,56 +493,13 @@ router.post('/add-to-favorite/:product', jwtAuthenticate, async (req, res) => {
 router.post('/favorite-products', jwtAuthenticate, async (req, res) => {
   try {
     if (req.session.user) {
-      const { sortBy, brand, onSale } = req.body;
-      let favorite;
-      let orderBy;
+      const favorite = await Favorite.findAll({
+        where: {
+          UserId: req.session.user.sub,
+        },
+      });
 
-      // Sort by - newest
-      if (sortBy === 'newest') {
-        orderBy = [['createdAt', 'DESC']];
-      }
-
-      // Sort by - most popular
-      if (sortBy === 'mostPopular') {
-        orderBy = [['timesBought', 'DESC']];
-      }
-
-      // Sort by - price low - high
-      if (sortBy === 'priceLowHigh') {
-        orderBy = [['totalPrice', 'ASC']];
-      }
-
-      // Sort by - price high - low
-      if (sortBy === 'priceHighLow') {
-        orderBy = [['totalPrice', 'DESC']];
-      }
-
-      // Get all selected brands
-      const brands = Object.keys(brand).filter((key) => brand[key] === true);
-
-      // Fetch products
-      if (!brands[0]) {
-        favorite = await Favorite.findAll({
-          where: {
-            UserId: req.session.user.sub,
-            discount:
-              onSale.sale === true ? { [Op.not]: 0 } : { [Op.not]: 10000 },
-          },
-          order: orderBy,
-        });
-      } else {
-        favorite = await Favorite.findAll({
-          where: {
-            brand: brands,
-            UserId: req.session.user.sub,
-            discount:
-              onSale.sale === true ? { [Op.not]: 0 } : { [Op.not]: 10000 },
-          },
-          order: orderBy,
-        });
-      }
-
-      res.send({ status: 200, favorite });
+      res.send({ status: 200, favorite, userId: req.session.user.sub });
     } else {
       res.send({ status: 401 });
     }
@@ -689,7 +652,6 @@ router.post('/on-sale/:categoryTitle', async (req, res) => {
       }
     }
 
-    console.log(category);
     res.send({ status: 200, category });
   } catch {
     res.send({ status: 500 });
@@ -746,6 +708,7 @@ router.post('/products-sales', async (req, res) => {
     } else {
       category = await Product.findAll({
         where: {
+          brand: brands,
           discount: { [Op.not]: 0 },
         },
         order: orderBy,
