@@ -10,7 +10,7 @@
   width: 100%;
   height: 106vh;
   padding-left: 6.75vw;
-  padding-right: 15vw;
+  padding-right: 12vw;
 
   & h1 {
     color: $primary-color;
@@ -318,6 +318,7 @@
 
   & img {
     width: 5rem;
+    height: 5rem;
   }
 }
 
