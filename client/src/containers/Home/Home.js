@@ -135,9 +135,11 @@ const Home = () => {
               whyusTitle='Amazing Prices & Quality'
               whyusText='Shop electronics and technology for low prices. For a 10% discount, use the promo code "10OFF" at checkout.'
               whyusImg={PriceIcon}
-              whyusLink='Our Sales'
-              whyusPath='/sales'
-              scrollDown={false}
+              whyusLink='View Trending'
+              whyusPath='/'
+              scrollDown={true}
+              scrollFunction={urlRemoveId}
+              scrollId='#trending'
             />
             <Whyus
               whyusClass='whyus_customer_service'
@@ -155,6 +157,7 @@ const Home = () => {
               whyusImg={ReviewIcon}
               whyusLink='Our Reviews'
               whyusPath='/'
+              scrollId='#reviews'
               scrollDown={true}
               scrollFunction={urlRemoveId}
             />
@@ -162,7 +165,7 @@ const Home = () => {
         </div>
       </section>
       <section>
-        <div className='trending' ref={trendingRef}>
+        <div className='trending' id='#trending' ref={trendingRef}>
           <H3 title='MOST POPULAR' />
           <H2 title='TRENDING NOW' />
           <div className='trending_product_section'>

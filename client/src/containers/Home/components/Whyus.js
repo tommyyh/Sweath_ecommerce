@@ -16,6 +16,7 @@ const Whyus = ({
   whyusPath,
   scrollDown,
   scrollFunction,
+  scrollId,
 }) => {
   return (
     <div className={whyusClass}>
@@ -26,7 +27,7 @@ const Whyus = ({
         {!scrollDown ? (
           <Link to={whyusPath}>{whyusLink}</Link>
         ) : (
-          <a href='#reviews' onClick={scrollFunction}>
+          <a href={scrollId} onClick={scrollFunction}>
             {whyusLink}
           </a>
         )}

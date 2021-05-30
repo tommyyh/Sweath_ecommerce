@@ -174,7 +174,7 @@ const Header = () => {
                               <Li text='Smartphones' />
                             </Link>
                             <Link to='/category/ultrabooks'>
-                              <Li text='School Laptops' />
+                              <Li text='Ultrabooks' />
                             </Link>
                             <Link to='/category/televisions'>
                               <Li text='Televisions' />

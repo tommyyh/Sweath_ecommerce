@@ -225,7 +225,7 @@ const Show = () => {
                   <H2 title={product.CategoryTitle.toUpperCase()} />
                   <h1>
                     {product.title.toUpperCase()}
-                    {isLogged && (
+                    {userRole === 'ADMIN' && (
                       <span className='show_delete' onClick={deleteProduct}>
                         {' '}
                         - DELETE
