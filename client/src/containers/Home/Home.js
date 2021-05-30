@@ -103,7 +103,7 @@ const Home = () => {
       <main>
         <div className='lp_home'>
           <h1>
-            <span>ELECTRONICS</span>
+            <span>ELECTRONICS </span>
             <span>& TECH ACCESSIBLE FOR LOW PRICES</span>
           </h1>
           <P text='Sweath is an online e-commerce store that sells good quality electronics, technology and other products for low prices.' />

@@ -198,7 +198,7 @@ const Header = () => {
                               <Li text='Smartphones' />
                             </Link>
                             <Link to='/sale/ultrabooks'>
-                              <Li text='School Laptops' />
+                              <Li text='Ultrabooks' />
                             </Link>
                             <Link to='/sale/televisions'>
                               <Li text='Televisions' />

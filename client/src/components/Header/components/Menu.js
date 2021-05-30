@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+import { FaChevronLeft } from 'react-icons/fa';
 
 // Components
 import MenuItems from './MenuItems';
@@ -54,8 +55,8 @@ const Menu = ({
           listChildren={
             <>
               <MenuItems title='Products' setActiveMenu={setActiveMenu} />
-              <MenuItems title='Accessories' setActiveMenu={setActiveMenu} />
-              <MenuItems title='Sale' setActiveMenu={setActiveMenu} />
+              <MenuItems title='Sales' setActiveMenu={setActiveMenu} />
+              <MenuItems title='Account' setActiveMenu={setActiveMenu} />
               <MenuItems title='Contact Us' path='/contact-us' />
             </>
           }
@@ -99,37 +100,53 @@ const Menu = ({
         }
         title='Products'
         closeInnerMenu={setActiveMenu}
-        innerLinkTitle1='Laptops'
-        innerLinkTitle2='Phones'
-        innerLinkTitle3='Lorem'
-        innerLinkTitle4='Ipsum'
+        innerLinkTitle1='Smartphones'
+        innerLinkTitle2='Ultrabooks'
+        innerLinkTitle3='Televisions'
+        innerLinkTitle4='Tablets'
       />
       <InnerMenu
         activeMenu={activeMenu}
         activeMenuClass={
-          activeMenu === 'Accessories'
-            ? 'inner_menu_accessories'
-            : 'inner_menu_accessories_closed'
+          activeMenu === 'Sales'
+            ? 'inner_menu_sales'
+            : 'inner_menu_sales_closed'
         }
-        title='Accessories'
+        title='Sales'
         closeInnerMenu={setActiveMenu}
-        innerLinkTitle1='Dolor'
-        innerLinkTitle2='Consectetur'
-        innerLinkTitle3='Molestiae'
-        innerLinkTitle4='Maxime'
+        innerLinkTitle1='Smartphones'
+        innerLinkTitle2='Ultrabooks'
+        innerLinkTitle3='Televisions'
+        innerLinkTitle4='Tablets'
       />
-      <InnerMenu
-        activeMenu={activeMenu}
-        activeMenuClass={
-          activeMenu === 'Sale' ? 'inner_menu_sale' : 'inner_menu_sale_closed'
+      <div
+        className={
+          activeMenu === 'Account'
+            ? 'inner_menu_account'
+            : 'inner_menu_account_closed'
         }
-        title='Sale'
-        closeInnerMenu={setActiveMenu}
-        innerLinkTitle1='Neque'
-        innerLinkTitle2='Consectetur'
-        innerLinkTitle3='Veniam'
-        innerLinkTitle4='Similique'
-      />
+      >
+        <div className='go_back' onClick={() => setActiveMenu('')}>
+          <FaChevronLeft />
+          <h3>All</h3>
+        </div>
+        <H2 title='Account' />
+        <Ul
+          listChildren={
+            <>
+              <li>
+                <Link to='/my-account'>My account</Link>
+              </li>
+              <li>
+                <Link to='/favorite'>Favorite</Link>
+              </li>
+              <li>
+                <Link to='/my-account/orders'>Order History</Link>
+              </li>
+            </>
+          }
+        />
+      </div>
     </>
   );
 };

@@ -345,8 +345,8 @@
 
 // Inner menu - expanded products
 .inner_menu_products_closed,
-.inner_menu_accessories_closed,
-.inner_menu_sale_closed {
+.inner_menu_account_closed,
+.inner_menu_sales_closed {
   position: absolute;
   width: 82vw;
   height: 100vh;
@@ -380,8 +380,8 @@
 }
 
 .inner_menu_products,
-.inner_menu_accessories,
-.inner_menu_sale {
+.inner_menu_sales,
+.inner_menu_account {
   position: absolute;
   width: 82vw;
   height: 100vh;

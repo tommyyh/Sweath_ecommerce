@@ -12,16 +12,11 @@ const InnerMenuItems = ({ innerLinkTitle, activeMenu }) => {
       text={
         <>
           {activeMenu === 'Products' ? (
-            <Link to={'/products/' + innerLinkPath}>{innerLinkTitle}</Link>
+            <Link to={'/category/' + innerLinkPath}>{innerLinkTitle}</Link>
           ) : (
             ''
           )}
-          {activeMenu === 'Accessories' ? (
-            <Link to={'/accessories/' + innerLinkPath}>{innerLinkTitle}</Link>
-          ) : (
-            ''
-          )}
-          {activeMenu === 'Sale' ? (
+          {activeMenu === 'Sales' ? (
             <Link to={'/sale/' + innerLinkPath}>{innerLinkTitle}</Link>
           ) : (
             ''
