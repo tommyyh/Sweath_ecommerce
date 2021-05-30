@@ -77,7 +77,7 @@ const Products = () => {
   }
 
   const deleteCategory = async () => {
-    const res = await axios.delete(window.location.pathname);
+    const res = await axios.delete(`/products/category/${category}`);
 
     if (res.data.status === 200) {
       history.push('/');
@@ -188,6 +188,14 @@ const Products = () => {
                     >
                       <SortOption
                         sortOptionTitle='Brand'
+                        sortOption1={brands[0].DISTINCT}
+                        sortOption2={brands[1].DISTINCT}
+                        sortOption3={brands[2].DISTINCT}
+                        sortOption4={brands[3].DISTINCT}
+                        sortOptionName1={brands[0].DISTINCT.toLowerCase()}
+                        sortOptionName2={brands[1].DISTINCT.toLowerCase()}
+                        sortOptionName3={brands[2].DISTINCT.toLowerCase()}
+                        sortOptionName4={brands[3].DISTINCT.toLowerCase()}
                         formGroup='brands'
                         checkbox={true}
                         openByDefault={false}

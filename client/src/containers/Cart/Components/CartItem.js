@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaRegHeart, FaHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { v4 as uuid } from 'uuid';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 // Components
@@ -11,7 +11,6 @@ import H3 from '../../../components/HtmlTags/H3';
 import H4 from '../../../components/HtmlTags/H4';
 import Option from '../../../components/HtmlTags/Option';
 import H5 from '../../../components/HtmlTags/H5';
-import { openLogin } from '../../../actions/menuType';
 
 // Assets
 import Times from '../../../assets/svg/times.svg';
@@ -30,7 +29,6 @@ const CartItem = ({
   updateQuantity,
 }) => {
   const isLogged = useSelector((state) => state.isLogged);
-  const dispatch = useDispatch();
   const [isFavorite, setIsFavorite] = useState(Boolean);
 
   useEffect(() => {
@@ -59,7 +57,7 @@ const CartItem = ({
       }
     };
 
-    fetchProduct();
+    fetchProduct(); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const addToFavorite = async () => {
@@ -70,7 +68,7 @@ const CartItem = ({
     }
   };
 
-  const removefromFavorite = async () => {
+  const removeFromFavorite = async () => {
     const res = await axios.delete(`/products/favorite/remove/${productSlug}`);
 
     if (res.data.status === 200) {
@@ -130,7 +128,7 @@ const CartItem = ({
               {isLogged && (
                 <div
                   className='cart_item_options_desktop_favorite'
-                  onClick={!isFavorite ? addToFavorite : removefromFavorite}
+                  onClick={!isFavorite ? addToFavorite : removeFromFavorite}
                 >
                   {!isFavorite ? (
                     <FaRegHeart size={'0.9rem'} />
@@ -172,7 +170,12 @@ const CartItem = ({
           onClick={() => removeProduct(productSlug)}
         >
           <Img imageSrc={Times} imageAlt='Times icon' />
-          <FaRegHeart size={window.innerWidth < 480 ? 19 : 24} />
+          {isLogged &&
+            (!isFavorite ? (
+              <FaRegHeart size={'1.1rem'} onClick={addToFavorite} />
+            ) : (
+              <FaHeart size={'1.1rem'} onClick={removeFromFavorite} />
+            ))}
         </div>
       </div>
     </>

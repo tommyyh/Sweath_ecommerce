@@ -150,7 +150,7 @@ const AdminEdit = () => {
       const res = await axios.put(`/products/edit/product/${product}`, data);
 
       if (res.data.status === 201) {
-        push(`/products/category/${fetchedProduct.productCategory}`);
+        push(`/category/${fetchedProduct.productCategory}`);
       }
     }
   };

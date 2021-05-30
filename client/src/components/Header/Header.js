@@ -173,11 +173,11 @@ const Header = () => {
                             <Link to='/category/smartphones'>
                               <Li text='Smartphones' />
                             </Link>
-                            <Link to='/category/school-laptops'>
+                            <Link to='/category/ultrabooks'>
                               <Li text='School Laptops' />
                             </Link>
-                            <Link to='/category/gaming-laptops'>
-                              <Li text='Gaming Laptops' />
+                            <Link to='/category/televisions'>
+                              <Li text='Televisions' />
                             </Link>
                             <Link to='/category/tablets'>
                               <Li text='Tablets' />
@@ -197,11 +197,11 @@ const Header = () => {
                             <Link to='/sale/smartphones'>
                               <Li text='Smartphones' />
                             </Link>
-                            <Link to='/sale/school-laptops'>
+                            <Link to='/sale/ultrabooks'>
                               <Li text='School Laptops' />
                             </Link>
-                            <Link to='/sale/gaming-laptops'>
-                              <Li text='Gaming Laptops' />
+                            <Link to='/sale/televisions'>
+                              <Li text='Televisions' />
                             </Link>
                             <Link to='/sale/tablets'>
                               <Li text='Tablets' />
