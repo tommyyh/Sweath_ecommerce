@@ -96,10 +96,12 @@ router.post('/category/:category', async (req, res) => {
     }
 
     // Get all different brand names for filter options
-    const allBrands = await Product.aggregate('brand', 'DISTINCT', {
-      plain: false,
-      where: { CategoryTitle: req.params.category },
-    });
+    // const allBrands = await Product.aggregate('brand', 'DISTINCT', {
+    //   plain: false,
+    //   where: { CategoryTitle: req.params.category },
+    // });
+
+    const allBrands = ['Samsung'];
 
     if (!storedCategory) {
       res.send({ status: 200, category: { title: undefined, Products: [] } });
